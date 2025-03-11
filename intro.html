@@ -952,16 +952,20 @@ Jenis:
 <ol type="a">
   <li>jarak Tetangga Terdekat (k-NN Distance)</li>
   Untuk setiap titik data, hitung jarak ke k tetangga terdekat. Biasanya digunakan jarak Euclidean:
-  <p><img alt="rumus" src="_images/rumus euclidean.png" /></p>
+  <p><img alt="rumus" src="_images/knn1.png" /></p>
   Contoh: jika kita punya dua titik data A (2.1, 3.2) dan B (1.8, 2.9), maka:
+  <p><img alt="rumus" src="_images/knn2.png" /></p>
   <li>Jarak Keterjangkauan (Reachability Distance)</li>
   Jarak keterjangkauan antara dua titik adalah jarak maksimum antara jarak aktual dan jarak k-tetangga.
+  <p><img alt="rumus" src="_images/ReachabilityDistance.png" /></p>
   Jika jarak aktual A ke B lebih kecil dari jarak k-NN B, maka gunakan jarak k-NN B.
   <li>Kepadatan Lokal (Local Density)</li>
   Kepadatan lokal dihitung sebagai kebalikan dari rata-rata jarak keterjangkauan ke tetangga-tetangga terdekatnya:
+  <p><img alt="rumus" src="_images/LocalDensity.png" /></p>
   Semakin kecil LD, semakin jarang data tersebut muncul.
   <li>Faktor LOF</li>
   Faktor LOF diperoleh dengan membandingkan kepadatan lokal titik tersebut dengan kepadatan lokal tetangganya:
+  <p><img alt="rumus" src="_images/FaktorLOF.png" /></p>
   Jika LOF > 1, titik lebih jarang muncul dibandingkan tetangganya (indikasi outlier). Jika LOF ≈ 1, maka titik memiliki kepadatan yang mirip dengan tetangganya (bukan outlier).
 
 
