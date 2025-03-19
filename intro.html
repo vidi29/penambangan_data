@@ -1092,7 +1092,6 @@ Jenis:
 
 <br>
 <b>Menghitung Reachability Distance (RD)</b>
-<h2 style="text-align: center;">Tabel Reachability Distance (RD)</h2>
 <table style="border: 2px solid rgb(0, 89, 255); width: 100%; border-collapse: collapse; text-align: center;">
   <thead>
     <tr style="background-color: #001eff; color: white;">
@@ -1208,7 +1207,46 @@ Jenis:
   </tbody>
 </table>
 
-<h1>Deteksi Outlier dengan LOF dan Isolation Forest</h1>
+<br>
+<b>Contoh Implementasi LOF Menggunakan Library Sklearn</b>
+
+<div class="cell">
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.neighbors import LocalOutlierFactor
+
+# Data contoh (10 data dengan 2 fitur)
+data = np.array([
+    [2.2, 3.2], [1.8, 2.9], [2.5, 3.5], [8.0, 8.2], [8.1, 8.0],
+    [1.9, 3.1], [2.3, 3.3], [8.2, 8.1], [7.9, 8.3], [2.0, 3.0]
+])
+
+# Inisialisasi model LOF dengan k=3
+lof = LocalOutlierFactor(n_neighbors=3, metric="euclidean")
+
+# Fit model dan dapatkan skor LOF (semakin negatif, semakin outlier)
+lof_scores = lof.fit_predict(data)
+lof_values = -lof.negative_outlier_factor_
+
+# Buat DataFrame untuk melihat hasilnya
+df = pd.DataFrame(data, columns=["X1", "X2"])
+df.insert(0, "ID", range(1, 11))  # Menambahkan kolom ID dari 1-10
+df["LOF"] = lof_values
+df["Outlier"] = ["Ya" if x > 1.2 else "Tidak" for x in lof_values]
+
+# Tampilkan hasil
+print(df)
+
+# Visualisasi data
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x=df["X1"], y=df["X2"], hue=df["Outlier"], palette={"Ya": "red", "Tidak": "blue"}, s=100)
+plt.title("Deteksi Outlier dengan LOF")
+plt.xlabel("X1")
+plt.ylabel("X2")
+plt.show()
+</div>
     
     <div class="cell">
         <h3>Import Library</h3>
