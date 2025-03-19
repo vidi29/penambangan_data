@@ -968,7 +968,7 @@ Jenis:
   <p><img alt="rumus" src="_images/FaktorLOF.png" /></p>
   Jika LOF > 1, titik lebih jarang muncul dibandingkan tetangganya (indikasi outlier). Jika LOF ≈ 1, maka titik memiliki kepadatan yang mirip dengan tetangganya (bukan outlier).
 
-  <h2>Tabel 10 Data Dengan 2 Fitur X1 dan X2</h2>
+  <b>Tabel 10 Data Dengan 2 Fitur X1 dan X2</b>
 <table style="border: 2px solid rgb(0, 89, 255); width: 100%; border-collapse: collapse; text-align: center;">
   <thead>
     <tr style="background-color: #001eff; color: white;">
@@ -1034,8 +1034,6 @@ Jenis:
 </ol>
 <br>
 <b>Hitung Euclidean Distance</b>
-// <p><img alt="rumus" src="_images/Distance.png" /></p>
-// <h2 style="text-align: center;">Matriks Data</h2>
 <table style="border: 2px solid rgb(0, 89, 255); width: 100%; border-collapse: collapse; text-align: center;">
   <thead>
     <tr style="background-color: #001eff; color: white;">
@@ -1067,12 +1065,106 @@ Jenis:
 </table>
 
 <br>
-<p>Hitung RD</P>
-<p><img alt="rumus" src="_images/RD.png" /></p>
+<b>Menghitung dan Menentukan K-Distance dan K-Nearest Neighbors</b>
+<table style="border: 2px solid rgb(0, 89, 255); width: 100%; border-collapse: collapse; text-align: center;">
+  <thead>
+    <tr style="background-color: #001eff; color: white;">
+      <th style="border: 2px solid white; padding: 10px;">ID</th>
+      <th style="border: 2px solid white; padding: 10px;">K-Distance</th>
+      <th style="border: 2px solid white; padding: 10px;">K-Nearest</th>
+      <th style="border: 2px solid white; padding: 10px;">K-Distance masing Titik</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">1</td><td>0.22</td><td>[6, 7, 10]</td><td>0.22, 0.22, 0.22</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">2</td><td>0.42</td><td>[6, 10, 1]</td><td>0.22, 0.22, 0.42</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">3</td><td>0.71</td><td>[7, 1, 10]</td><td>0.28, 0.50, 0.71</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">4</td><td>0.22</td><td>[9, 5, 8]</td><td>0.14, 0.22, 0.22</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">5</td><td>0.36</td><td>[8, 4, 9]</td><td>0.14, 0.22, 0.36</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">6</td><td>0.22</td><td>[10, 1, 2]</td><td>0.14, 0.22, 0.22</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">7</td><td>0.42</td><td>[1, 3, 10]</td><td>0.22, 0.28, 0.42</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">8</td><td>0.36</td><td>[5, 4, 9]</td><td>0.14, 0.22, 0.36</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">9</td><td>0.36</td><td>[4, 5, 8]</td><td>0.14, 0.36, 0.36</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">10</td><td>0.22</td><td>[6, 1, 2]</td><td>0.14, 0.22, 0.22</td></tr>
+  </tbody>
+</table>
 
 <br>
-<p>Hasil Perhitungan LOF</P>
-<p><img alt="rumus" src="_images/HasilLOF.png" /></p>
+<b>Menghitung Reachability Distance (RD)</b>
+<table style="border: 2px solid rgb(0, 89, 255); width: 100%; border-collapse: collapse; text-align: center;">
+  <thead>
+    <tr style="background-color: #001eff; color: white;">
+      <th style="border: 2px solid white; padding: 10px;">ID</th>
+      <th style="border: 2px solid white; padding: 10px;">K-Nearest</th>
+      <th style="border: 2px solid white; padding: 10px;">Reachability Distance (RD)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">1</td><td>[6, 7, 10]</td><td>0.224, 0.424, 0.224</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">2</td><td>[6, 10, 1]</td><td>0.224, 0.224, 0.424</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">3</td><td>[7, 1, 10]</td><td>0.424, 0.500, 0.707</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">4</td><td>[9, 5, 8]</td><td>0.361, 0.361, 0.224</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">5</td><td>[8, 4, 9]</td><td>0.361, 0.224, 0.361</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">6</td><td>[10, 1, 2]</td><td>0.224, 0.224, 0.424</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">7</td><td>[1, 3, 10]</td><td>0.224, 0.707, 0.424</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">8</td><td>[5, 4, 9]</td><td>0.361, 0.224, 0.361</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">9</td><td>[4, 5, 8]</td><td>0.224, 0.361, 0.361</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">10</td><td>[6, 1, 2]</td><td>0.224, 0.224, 0.424</td></tr>
+  </tbody>
+</table>
+
+<br>
+<b>Menghitung Local Reachability Density (LRD)</b>
+<table style="border: 2px solid rgb(0, 89, 255); width: 100%; border-collapse: collapse; text-align: center;">
+  <thead>
+    <tr style="background-color: #001eff; color: white;">
+      <th style="border: 2px solid white; padding: 10px;">ID</th>
+      <th style="border: 2px solid white; padding: 10px;">K-Nearest</th>
+      <th style="border: 2px solid white; padding: 10px;">Reachability Distance (RD)</th>
+      <th style="border: 2px solid white; padding: 10px;">LRD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">1</td><td>[6, 7, 10]</td><td>0.220, 0.420, 0.220</td><td>3.488</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">2</td><td>[6, 10, 1]</td><td>0.220, 0.220, 0.420</td><td>3.488</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">3</td><td>[7, 1, 10]</td><td>0.420, 0.500, 0.710</td><td>1.840</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">4</td><td>[9, 5, 8]</td><td>0.360, 0.360, 0.220</td><td>3.191</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">5</td><td>[8, 4, 9]</td><td>0.360, 0.220, 0.360</td><td>3.191</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">6</td><td>[10, 1, 2]</td><td>0.220, 0.220, 0.420</td><td>3.488</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">7</td><td>[1, 3, 10]</td><td>0.220, 0.710, 0.420</td><td>2.222</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">8</td><td>[5, 4, 9]</td><td>0.360, 0.220, 0.360</td><td>3.191</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">9</td><td>[4, 5, 8]</td><td>0.220, 0.360, 0.360</td><td>3.191</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">10</td><td>[6, 1, 2]</td><td>0.220, 0.220, 0.420</td><td>3.488</td></tr>
+  </tbody>
+</table>
+
+
+<br>
+<b>Hasil Perhitungan LOF</b>
+<table style="border: 2px solid rgb(0, 89, 255); width: 100%; border-collapse: collapse; text-align: center;">
+  <thead>
+    <tr style="background-color: #001eff; color: white;">
+      <th style="border: 2px solid white; padding: 10px;">ID</th>
+      <th style="border: 2px solid white; padding: 10px;">K-Nearest</th>
+      <th style="border: 2px solid white; padding: 10px;">LRD(A)</th>
+      <th style="border: 2px solid white; padding: 10px;">LRD Tiap Titik Tetangga</th>
+      <th style="border: 2px solid white; padding: 10px;">LOF</th>
+      <th style="border: 2px solid white; padding: 10px;">Outlier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">1</td><td>[6, 7, 10]</td><td>3.488</td><td>3.488, 2.222, 3.488</td><td>0.879</td><td>Tidak</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">2</td><td>[6, 10, 1]</td><td>3.488</td><td>3.488, 3.488, 3.488</td><td>1.000</td><td>Tidak</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">3</td><td>[7, 1, 10]</td><td>1.840</td><td>2.222, 3.488, 3.488</td><td>1.666</td><td style="color: red;">Ya</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">4</td><td>[9, 5, 8]</td><td>3.191</td><td>3.191, 3.191, 3.191</td><td>1.000</td><td>Tidak</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">5</td><td>[8, 4, 9]</td><td>3.191</td><td>3.191, 3.191, 3.191</td><td>1.000</td><td>Tidak</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">6</td><td>[10, 1, 2]</td><td>3.488</td><td>3.488, 3.488, 3.488</td><td>1.000</td><td>Tidak</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">7</td><td>[1, 3, 10]</td><td>2.222</td><td>3.488, 1.840, 3.488</td><td>1.323</td><td style="color: red;">Ya</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">8</td><td>[5, 4, 9]</td><td>3.191</td><td>3.191, 3.191, 3.191</td><td>1.000</td><td>Tidak</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">9</td><td>[4, 5, 8]</td><td>3.191</td><td>3.191, 3.191, 3.191</td><td>1.000</td><td>Tidak</td></tr>
+    <tr><td style="border: 1px solid rgb(0, 89, 255); padding: 8px;">10</td><td>[6, 1, 2]</td><td>3.488</td><td>3.488, 3.488, 3.488</td><td>1.000</td><td>Tidak</td></tr>
+  </tbody>
+</table>
 
 <h1>Deteksi Outlier dengan LOF dan Isolation Forest</h1>
     
