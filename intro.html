@@ -1275,6 +1275,48 @@ plt.show()
     </pre>
 </div>
 
+<h2>Naive Bayes</h2>
+<p>Naive Bayes adalah algoritma klasifikasi yang menggunakan prinsip probabilitas Bayes untuk memprediksi kategori suatu data berdasarkan fitur-fitur yang ada. 
+  Naive Bayes termasuk dalam kategori supervised learning dan sering digunakan untuk klasifikasi teks, seperti spam filtering atau analisis sentimen. 
+  Algoritma ini bekerja dengan asumsi bahwa fitur-fitur yang ada pada data bersifat independen satu sama lain, meskipun dalam kenyataannya hal ini jarang terjadi, itulah sebabnya disebut "naive" (naif).</p>
+
+<b>Prinsip Dasar dan Teorema Bayes</b>
+<p>Teorema Bayes adalah dasar dari algoritma Naive Bayes. Teorema ini menghubungkan dua probabilitas: 
+  probabilitas kondisi (posterior) dan probabilitas sebelumnya (prior). Berikut adalah rumus teorema Bayes:</p>
+
+<p>Di mana:</p>
+
+<b>Asumsi “Naive”</b>
+<p>Asumsi "naive" dalam Naive Bayes adalah bahwa semua fitur dianggap independen, yang berarti fitur-fitur tersebut tidak saling bergantung satu sama lain. 
+  Meskipun ini jarang terjadi dalam dunia nyata, asumsi ini menyederhanakan perhitungan probabilitas dan memungkinkan algoritma ini berjalan dengan cepat dan efektif, bahkan dengan data yang besar.</p>
+
+<b>Langkah-langkah Klasifikasi</b>
+<p>Langkah-langkah dalam proses klasifikasi menggunakan Naive Bayes adalah sebagai berikut:</p>
+<ol>
+  <li>Pengumpulan Data: Kumpulkan data yang memiliki fitur dan label kelas (misalnya, data email dengan label spam atau bukan spam).</li>
+  <li>Pra-pemrosesan Data: Bersihkan dan transformasi data menjadi format yang sesuai. Misalnya, untuk teks, bisa dilakukan tokenisasi dan pembobotan kata (seperti TF-IDF).</li>
+  <li>Perhitungan Probabilitas Prior: Hitung probabilitas prior untuk setiap kelas berdasarkan frekuensi kemunculannya dalam data pelatihan.</li>
+  <li>Perhitungan Probabilitas Likelihood: Hitung probabilitas untuk setiap fitur berdasarkan kelas.</li>
+  <li>Klasifikasi: Untuk data baru, hitung probabilitas untuk setiap kelas dan pilih kelas dengan probabilitas tertinggi sebagai hasil klasifikasi.</li>
+</ol>
+
+<b>Kelebihan dan Kekurangan</b>
+<p>Kelebihan Naive Bayes:</p>
+<ul>
+  <li>Cepat dan sederhana: Algoritma ini sangat cepat dalam pelatihan dan prediksi, terutama untuk dataset besar.</li>
+  <li>Skalabilitas tinggi: Dapat menangani data dengan jumlah fitur yang sangat banyak.</li>
+  <li>Efektif pada data tidak seimbang: Naive Bayes sering kali berfungsi dengan baik meskipun distribusi kelas tidak seimbang.</li>
+  <li>Tidak memerlukan banyak data untuk pelatihan: Naive Bayes bekerja dengan baik meskipun data pelatihan relatif kecil.</li>
+</ul>
+
+<p>Kekurangan Naive Bayes:</p>
+<ul>
+  <li>Asumsi independensi yang kuat: Jika fitur tidak independen, kinerja Naive Bayes dapat menurun.</li>
+  <li>Kurang fleksibel pada data kompleks: Pada data dengan hubungan fitur yang kompleks, Naive Bayes mungkin tidak memberikan hasil yang baik.</li>
+  <li>Salah menilai dependensi antar fitur: Dalam kasus di mana fitur memiliki hubungan yang signifikan, algoritma ini dapat memberikan hasil yang kurang akurat.</li>
+</ul>
+
+
 <div class="toctree-wrapper compound">
 <ul>
 
