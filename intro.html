@@ -1322,15 +1322,30 @@ plt.show()
 </ul>
 <br>
 <h1>Laporan UTS Penambangan Data</h1>
-    <iframe src="UTS_Vidi.html" width="100%" height="800px" style="border:none;"></iframe>
-<h>Projek Model Klasifikasi UTS</h1>
-<p>1. Memahami Data (Data Understanding)</p>
-<b>Langkah pertama adalah mendownload dataset dan memahaminya. 
-  Berikut adalah penjelasan bagaimana mengunduh dan memuat dataset, lalu melakukan pemahaman terhadap kolom dan informasi yang ada.</b>
+<b>Tahapan Analisa</b>
+  <p>Proses analisa dimulai dengan menentukan tujuan dari proyek klasifikasi, yaitu untuk memprediksi status kesehatan pasien berdasarkan data yang tersedia dalam dataset. 
+  Pendekatan ini mengadopsi alur standar dalam data mining, mirip seperti yang telah dilakukan dalam tugas kelompok, yang mencakup tahapan pemahaman data, pemrosesan awal, pemodelan, evaluasi, dan penyajian hasil. 
+  Dataset yang digunakan berasal dari sumber terbuka dan telah disesuaikan dengan kebutuhan analisis. Setiap tahapan dilakukan secara sistematis untuk memastikan hasil akhir yang akurat dan dapat ditampilkan dalam bentuk yang mudah dipahami melalui web statis.</p>
 
-<p>Mengunduh Dataset</p>
-<p>Mengunduh Dataset</p>
-  
+<b>Pemahaman Data (Data Understanding)</b
+  <p>Tahap pemahaman data dimulai dengan eksplorasi dataset, yang meliputi identifikasi fitur, tipe data, jumlah sampel, serta pemetaan nilai-nilai yang mungkin tidak lengkap atau tidak konsisten. 
+    Dalam hal ini, data yang digunakan adalah data medis pasien sirosis hati, dengan berbagai atribut seperti usia, jenis kelamin, tingkat bilirubin, kadar albumin, dan status hidup atau meninggal. 
+    Analisis statistik sederhana seperti mean, standar deviasi, dan distribusi kelas target juga dilakukan untuk memahami karakteristik data.</p>
+
+<b>Pemrosesan Awal Data (Preprocessing)</b>
+<p>Pada tahap preprocessing, dilakukan pembersihan data dari nilai yang hilang dan outlier, serta transformasi nilai jika diperlukan. Beberapa fitur numerik dinormalisasi untuk memastikan kesetaraan skala dalam proses pemodelan, khususnya untuk algoritma berbasis jarak seperti K-Nearest Neighbors (KNN). 
+  Selain itu, dilakukan juga encoding pada fitur kategorikal agar dapat digunakan dalam proses klasifikasi. Dataset kemudian dibagi menjadi data latih dan data uji untuk proses pelatihan dan evaluasi model.</p>
+
+<b>Pemodelan (Model Klasifikasi - KNN)</b>
+<p>Tahap selanjutnya adalah membangun model klasifikasi menggunakan algoritma K-Nearest Neighbors (KNN). KNN dipilih karena kesederhanaannya dan kemampuannya untuk memberikan hasil klasifikasi yang baik pada data dengan distribusi yang tidak terlalu kompleks. 
+  Model dilatih dengan data latih, dan nilai k terbaik ditentukan melalui validasi silang atau pengujian nilai k secara iteratif. Hasil klasifikasi dari model ini kemudian diuji menggunakan data uji untuk mengukur performanya.</p>
+
+<b>Evaluasi</b>
+<p>Evaluasi model dilakukan dengan menggunakan metrik seperti akurasi, precision, recall, dan F1-score. Confusion matrix juga digunakan untuk melihat distribusi prediksi terhadap nilai aktual. 
+  Dari hasil evaluasi ini dapat disimpulkan apakah model sudah cukup baik atau perlu dilakukan perbaikan, seperti tuning parameter k atau melakukan pemilihan fitur lebih lanjut. 
+  Model dengan performa terbaik kemudian dipilih sebagai model akhir untuk ditampilkan.</p>
+
+    <iframe src="UTS_Vidi.html" width="100%" height="800px" style="border:none;"></iframe>
 
 <div class="toctree-wrapper compound">
 <ul>
