@@ -5,22 +5,31 @@
   <title>Data Excel + K-Means Manual</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
-    body { font-family: sans-serif; margin: 20px; }
-    table, th, td {
-      border: 1px solid #333;
-      border-collapse: collapse;
-      padding: 5px;
-      text-align: left;
+    body {
+      font-family: sans-serif;
+      margin: 20px;
     }
     table {
       width: 100%;
-      margin-top: 10px;
+      border-collapse: collapse;
+      table-layout: fixed; /* penting agar tidak geser */
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 6px;
+      text-align: center; /* semua kolom rata tengah */
+      word-wrap: break-word; /* supaya teks panjang tidak geser kolom */
+    }
+    th {
+      background-color: #f0f0f0;
     }
     .link-kmeans {
       margin-top: 20px;
     }
     .link-kmeans a {
       margin-right: 15px;
+      text-decoration: none;
+      color: #0056b3;
     }
   </style>
 </head>
@@ -45,14 +54,18 @@
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
         const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
+        let maxCols = Math.max(...rows.map(r => r.length));
         let html = '<table>';
-        rows.forEach(row => {
+
+        rows.forEach((row, index) => {
           html += '<tr>';
-          row.forEach(cell => {
-            html += `<td>${cell !== undefined ? cell : ''}</td>`;
-          });
+          for (let i = 0; i < maxCols; i++) {
+            const cell = row[i] !== undefined ? row[i] : '';
+            html += `<${index === 0 ? 'th' : 'td'}>${cell}</${index === 0 ? 'th' : 'td'}>`;
+          }
           html += '</tr>';
         });
+
         html += '</table>';
         document.getElementById('tabel-container').innerHTML = html;
       };
