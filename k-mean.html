@@ -505,6 +505,25 @@ plt.show()
     </pre>
 </div>
 
+<input type="file" id="upload-excel" accept=".xlsx" />
+<table id="excel-table" border="1"></table>
+
+<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+<script>
+  document.getElementById('upload-excel').addEventListener('change', function (e) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const data = new Uint8Array(e.target.result);
+      const workbook = XLSX.read(data, { type: 'array' });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const html = XLSX.utils.sheet_to_html(sheet);
+      document.getElementById('excel-table').outerHTML = html;
+    };
+    reader.readAsArrayBuffer(e.target.files[0]);
+  });
+</script>
+
 </section>
 </section>
 
