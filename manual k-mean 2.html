@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
-    #tabel-container { max-height: 400px; overflow-y: auto; }
+    #tabel-container { max-height: 500px; overflow-y: auto; }
     .link-kmeans {
       margin-top: 20px;
     }
@@ -41,34 +41,45 @@
     <a href="kmeans_4cluster.html" target="_blank">K-Means (4 Cluster)</a>
   </div>
 
+  <!-- Script libraries -->
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
   <script>
     fetch('k-mean.xlsx')
       .then(res => res.arrayBuffer())
-      .then(ab => {
-        const workbook = XLSX.read(ab, { type: "array" });
+      .then(arrayBuffer => {
+        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
         const sheetName = workbook.SheetNames[0];
         const sheet = workbook.Sheets[sheetName];
-        const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+        const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-        const headers = json[0];
-        const data = json.slice(1);
-
-        let theadHTML = '<tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr>';
+        // Buat header
+        let theadHTML = '<tr>';
+        data[0].forEach(header => {
+          theadHTML += `<th>${header}</th>`;
+        });
+        theadHTML += '</tr>';
         $('#tabel-data thead').html(theadHTML);
 
-        let tbodyHTML = data.map(row => {
-          return '<tr>' + headers.map((_, i) => `<td>${row[i] || ''}</td>`).join('') + '</tr>';
-        }).join('');
+        // Buat body
+        let tbodyHTML = '';
+        data.slice(1).forEach(row => {
+          tbodyHTML += '<tr>';
+          data[0].forEach((_, colIndex) => {
+            tbodyHTML += `<td>${row[colIndex] !== undefined ? row[colIndex] : ''}</td>`;
+          });
+          tbodyHTML += '</tr>';
+        });
         $('#tabel-data tbody').html(tbodyHTML);
 
+        // Aktifkan DataTables
         $('#tabel-data').DataTable({
-          pageLength: 10,
-          scrollY: '300px',
+          scrollY: '400px',
           scrollCollapse: true,
-          paging: true
+          paging: true,
+          pageLength: 15
         });
       });
   </script>
