@@ -507,19 +507,80 @@ plt.show()
 <input type="file" id="uploadExcel" />
 <div id="excelData"></div>
 
-<script>
-  document.getElementById('uploadExcel').addEventListener('change', function(e) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const data = new Uint8Array(e.target.result);
-      const workbook = XLSX.read(data, { type: 'array' });
-      const sheet = workbook.Sheets[workbook.SheetNames[0]];
-      const html = XLSX.utils.sheet_to_html(sheet);
-      document.getElementById('excelData').innerHTML = html;
-    };
-    reader.readAsArrayBuffer(e.target.files[0]);
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .upload-container {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      padding: 8px;
+    }
+
+    #excelData {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📊 Tampilkan File Excel</h1>
+
+  <div class="upload-container">
+    <label for="uploadExcel"><strong>Pilih file Excel (.xlsx):</strong></label><br>
+    <input type="file" id="uploadExcel" accept=".xlsx" />
+  </div>
+
+  <div id="excelData">File Excel yang dipilih akan ditampilkan di sini.</div>
+
+  <script>
+    document.getElementById('uploadExcel').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const html = XLSX.utils.sheet_to_html(sheet);
+        document.getElementById('excelData').innerHTML = html;
+      };
+
+      reader.readAsArrayBuffer(file);
+    });
+  </script>
 
 </section>
 </section>
