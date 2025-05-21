@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Excel Otomatis + K-Means</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    #tabel-container {
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px 12px;
+      text-align: left;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    th {
+      background-color: #e2e2e2;
+      font-weight: bold;
+    }
+    .link-kmeans {
+      margin-top: 20px;
+    }
+    .link-kmeans a {
+      margin-right: 15px;
+      text-decoration: none;
+      background-color: #3498db;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+    .link-kmeans a:hover {
+      background-color: #2c80b4;
+    }
+  </style>
+</head>
+<body>
+  <h2>Data dari Excel (.xlsx)</h2>
+  <div id="tabel-container">Memuat data...</div>
+
+  <div class="link-kmeans">
+    <h3>Perhitungan Manual K-Means:</h3>
+    <a href="kmeans_2cluster.html" target="_blank">K-Means (2 Cluster)</a>
+    <a href="kmeans_3cluster.html" target="_blank">K-Means (3 Cluster)</a>
+    <a href="kmeans_4cluster.html" target="_blank">K-Means (4 Cluster)</a>
+  </div>
+
+  <script>
+    fetch('data.xlsx')
+      .then(res => res.arrayBuffer())
+      .then(buffer => {
+        const data = new Uint8Array(buffer);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+        let maxCols = Math.max(...rows.map(r => r.length));
+        let html = '<table>';
+        rows.forEach((row, index) => {
+          html += '<tr>';
+          for (let i = 0; i < maxCols; i++) {
+            const cell = row[i] !== undefined ? row[i] : '';
+            html += `<${index === 0 ? 'th' : 'td'}>${cell}</${index === 0 ? 'th' : 'td'}>`;
+          }
+          html += '</tr>';
+        });
+        html += '</table>';
+        document.getElementById('tabel-container').innerHTML = html;
+      })
+      .catch(error => {
+        document.getElementById('tabel-container').innerText = 'Gagal memuat data: ' + error;
+        console.error('Gagal membaca file Excel:', error);
+      });
+  </script>
+</body>
+</html>
