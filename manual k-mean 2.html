@@ -3,36 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Data Excel + K-Means Manual</title>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    #tabel-container { max-height: 500px; overflow-y: auto; }
+    body { font-family: sans-serif; margin: 20px; }
+    table, th, td {
+      border: 1px solid #333;
+      border-collapse: collapse;
+      padding: 5px;
+      text-align: left;
+    }
+    table {
+      width: 100%;
+      margin-top: 10px;
+    }
     .link-kmeans {
       margin-top: 20px;
     }
     .link-kmeans a {
-      display: inline-block;
       margin-right: 15px;
-      margin-bottom: 5px;
-      padding: 10px 15px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .link-kmeans a:hover {
-      background-color: #2980b9;
     }
   </style>
 </head>
 <body>
   <h2>Data dari Excel (.xlsx)</h2>
-  <div id="tabel-container">
-    <table id="tabel-data" class="display" style="width:100%">
-      <thead></thead>
-      <tbody></tbody>
-    </table>
-  </div>
+  <input type="file" id="upload" accept=".xlsx" />
+  <div id="tabel-container"></div>
 
   <div class="link-kmeans">
     <h3>Perhitungan Manual K-Means:</h3>
@@ -41,47 +36,28 @@
     <a href="kmeans_4cluster.html" target="_blank">K-Means (4 Cluster)</a>
   </div>
 
-  <!-- Script libraries -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-
   <script>
-    fetch('k-mean.xlsx')
-      .then(res => res.arrayBuffer())
-      .then(arrayBuffer => {
-        const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-        const sheetName = workbook.SheetNames[0];
-        const sheet = workbook.Sheets[sheetName];
-        const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+    document.getElementById('upload').addEventListener('change', function (e) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-        // Buat header
-        let theadHTML = '<tr>';
-        data[0].forEach(header => {
-          theadHTML += `<th>${header}</th>`;
-        });
-        theadHTML += '</tr>';
-        $('#tabel-data thead').html(theadHTML);
-
-        // Buat body
-        let tbodyHTML = '';
-        data.slice(1).forEach(row => {
-          tbodyHTML += '<tr>';
-          data[0].forEach((_, colIndex) => {
-            tbodyHTML += `<td>${row[colIndex] !== undefined ? row[colIndex] : ''}</td>`;
+        let html = '<table>';
+        rows.forEach(row => {
+          html += '<tr>';
+          row.forEach(cell => {
+            html += `<td>${cell !== undefined ? cell : ''}</td>`;
           });
-          tbodyHTML += '</tr>';
+          html += '</tr>';
         });
-        $('#tabel-data tbody').html(tbodyHTML);
-
-        // Aktifkan DataTables
-        $('#tabel-data').DataTable({
-          scrollY: '400px',
-          scrollCollapse: true,
-          paging: true,
-          pageLength: 15
-        });
-      });
+        html += '</table>';
+        document.getElementById('tabel-container').innerHTML = html;
+      };
+      reader.readAsArrayBuffer(this.files[0]);
+    });
   </script>
 </body>
 </html>
