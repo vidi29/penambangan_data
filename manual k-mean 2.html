@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Data CSV</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    #tabel-container { max-height: 400px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+  <h2>Data dari CSV</h2>
+  <div id="tabel-container">
+    <table id="tabel-data" class="display" style="width:100%">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script>
+    // Ambil dan tampilkan data CSV
+    $(document).ready(function () {
+      $.ajax({
+        url: 'data.csv',
+        dataType: 'text',
+        success: function (data) {
+          const lines = data.trim().split('\n');
+          const headers = lines[0].split(',');
+          let theadHTML = '<tr>';
+          headers.forEach(h => theadHTML += `<th>${h}</th>`);
+          theadHTML += '</tr>';
+          $('#tabel-data thead').html(theadHTML);
+
+          const tbodyHTML = lines.slice(1).map(line => {
+            const cells = line.split(',');
+            return '<tr>' + cells.map(c => `<td>${c}</td>`).join('') + '</tr>';
+          }).join('');
+          $('#tabel-data tbody').html(tbodyHTML);
+
+          $('#tabel-data').DataTable({
+            pageLength: 10, // tampilkan 10 data per halaman
+            scrollY: '300px',
+            scrollCollapse: true,
+            paging: true
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
