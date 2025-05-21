@@ -12,12 +12,18 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      table-layout: fixed; /* menjaga lebar tetap */
+      table-layout: fixed;
     }
     th, td {
-      border: 1px solid #ccc;
+      border: 1px solid #333;
       padding: 6px;
-      word-wrap: break-word;
+      text-align: center;
+      white-space: nowrap;         /* teks tidak turun */
+      overflow: hidden;            /* sembunyikan teks kelebihan */
+      text-overflow: ellipsis;     /* tampilkan "..." jika terlalu panjang */
+    }
+    th {
+      background-color: #f0f0f0;
     }
     .link-kmeans {
       margin-top: 20px;
