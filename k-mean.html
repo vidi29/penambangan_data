@@ -507,33 +507,72 @@ plt.show()
 <input type="file" id="uploadExcel" />
 <div id="excelData"></div>
 
-<script>
-  // Ambil elemen input file dan kontainer hasil
-  const inputFile = document.getElementById('uploadExcel');
-  const resultContainer = document.getElementById('excelData');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    input[type="file"] {
+      margin-bottom: 20px;
+      padding: 10px;
+    }
 
-  // Tambahkan event listener ketika file dipilih
-  inputFile.addEventListener('change', function(event) {
-    const selectedFile = event.target.files[0]; // Ambil file Excel yang dipilih
-    if (!selectedFile) return;
+    #excelData {
+      overflow-x: auto;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
 
-    const fileReader = new FileReader(); // Buat objek pembaca file
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
 
-    // Ketika file berhasil dibaca
-    fileReader.onload = function(event) {
-      const arrayBuffer = new Uint8Array(event.target.result); // Konversi hasil baca
-      const workbook = XLSX.read(arrayBuffer, { type: 'array' }); // Baca workbook Excel
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      word-break: break-word;
+    }
 
-      const firstSheetName = workbook.SheetNames[0]; // Ambil nama sheet pertama
-      const firstSheet = workbook.Sheets[firstSheetName]; // Ambil isi sheet
+    th {
+      background-color: #f0f0f0;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
 
-      const htmlTable = XLSX.utils.sheet_to_html(firstSheet); // Konversi ke HTML tabel
-      resultContainer.innerHTML = htmlTable; // Tampilkan di halaman
-    };
+  <h2>📥 Upload File Excel</h2>
+  <input type="file" id="uploadExcel" accept=".xlsx" />
 
-    fileReader.readAsArrayBuffer(selectedFile); // Baca file sebagai array buffer
-  });
-</script>
+  <div id="excelData">📄 Hasil dari file Excel akan muncul di sini dalam bentuk tabel.</div>
+
+  <script>
+    // Ambil elemen input dan tempat hasil
+    const inputFile = document.getElementById('uploadExcel');
+    const resultContainer = document.getElementById('excelData');
+
+    // Saat file diunggah
+    inputFile.addEventListener('change', function(event) {
+      const selectedFile = event.target.files[0];
+      if (!selectedFile) return;
+
+      const reader = new FileReader();
+
+      reader.onload = function(event) {
+        const data = new Uint8Array(event.target.result);
+        const workbook = XLSX.read(data, { type: 'array' });
+
+        const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+        const htmlTable = XLSX.utils.sheet_to_html(firstSheet);
+
+        resultContainer.innerHTML = htmlTable;
+      };
+
+      reader.readAsArrayBuffer(selectedFile);
+    });
+  </script>
 
 </section>
 </section>
