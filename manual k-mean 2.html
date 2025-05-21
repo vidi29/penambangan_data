@@ -9,19 +9,23 @@
       font-family: sans-serif;
       margin: 20px;
     }
+    #tabel-container {
+      overflow-x: auto;
+    }
     table {
-      width: 100%;
       border-collapse: collapse;
-      table-layout: fixed;
+      width: 100%;
     }
     th, td {
-      border: 1px solid #333;
-      padding: 6px;
-      text-align: center;
-      white-space: nowrap;         /* teks tidak turun */
+      border: 1px solid #999;
+      padding: 8px 12px;
+      text-align: left; /* sejajar kiri agar mirip Excel */
+      vertical-align: middle;
+      white-space: nowrap; /* agar teks tetap menyamping */
     }
     th {
-      background-color: #f0f0f0;
+      background-color: #e2e2e2;
+      font-weight: bold;
     }
     .link-kmeans {
       margin-top: 20px;
@@ -29,7 +33,13 @@
     .link-kmeans a {
       margin-right: 15px;
       text-decoration: none;
-      color: #0056b3;
+      background-color: #3498db;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+    .link-kmeans a:hover {
+      background-color: #2c80b4;
     }
   </style>
 </head>
@@ -56,7 +66,6 @@
 
         let maxCols = Math.max(...rows.map(r => r.length));
         let html = '<table>';
-
         rows.forEach((row, index) => {
           html += '<tr>';
           for (let i = 0; i < maxCols; i++) {
@@ -65,8 +74,8 @@
           }
           html += '</tr>';
         });
-
         html += '</table>';
+
         document.getElementById('tabel-container').innerHTML = html;
       };
       reader.readAsArrayBuffer(this.files[0]);
