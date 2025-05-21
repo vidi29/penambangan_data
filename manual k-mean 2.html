@@ -1,72 +1,48 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Data CSV + K-Means Manual</title>
+  <title>Data K-Means</title>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    #tabel-container { max-height: 400px; overflow-y: auto; }
-    .link-kmeans { margin-top: 20px; }
-    .link-kmeans a {
-      display: inline-block;
-      margin-right: 15px;
-      margin-bottom: 5px;
-      padding: 10px 15px;
-      background-color: #3498db;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .link-kmeans a:hover {
-      background-color: #2980b9;
-    }
-  </style>
 </head>
 <body>
-  <h2>Data dari CSV</h2>
-  <div id="tabel-container">
-    <table id="tabel-data" class="display" style="width:100%">
-      <thead></thead>
-      <tbody></tbody>
-    </table>
-  </div>
+  <h2>Data K-Means dari CSV</h2>
 
-  <div class="link-kmeans">
-    <h3>Perhitungan Manual K-Means:</h3>
-    <a href="kmeans_2cluster.html" target="_blank">K-Means (2 Cluster)</a>
-    <a href="kmeans_3cluster.html" target="_blank">K-Means (3 Cluster)</a>
-    <a href="kmeans_4cluster.html" target="_blank">K-Means (4 Cluster)</a>
-  </div>
+  <table id="dataTable" class="display" style="width:100%">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
 
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <br>
+  <h3>Link Perhitungan Manual:</h3>
+  <ul>
+    <li><a href="kmeans_2cluster.html">K-Means 2 Cluster</a></li>
+    <li><a href="kmeans_3cluster.html">K-Means 3 Cluster</a></li>
+    <li><a href="kmeans_4cluster.html">K-Means 4 Cluster</a></li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <script>
     $(document).ready(function () {
-      $.ajax({
-        url: 'data.csv',
-        dataType: 'text',
-        success: function (data) {
-          const lines = data.trim().split('\n');
-          const headers = lines[0].split(',');
-          let theadHTML = '<tr>';
-          headers.forEach(h => theadHTML += `<th>${h}</th>`);
-          theadHTML += '</tr>';
-          $('#tabel-data thead').html(theadHTML);
+      $.get("k-mean.csv", function (data) {
+        const lines = data.trim().split("\n");
+        const headers = lines[0].split(",");
 
-          const tbodyHTML = lines.slice(1).map(line => {
-            const cells = line.split(',');
-            return '<tr>' + cells.map(c => `<td>${c}</td>`).join('') + '</tr>';
-          }).join('');
-          $('#tabel-data tbody').html(tbodyHTML);
+        let thead = "<tr>";
+        headers.forEach(h => { thead += `<th>${h}</th>` });
+        thead += "</tr>";
+        $("#dataTable thead").html(thead);
 
-          $('#tabel-data').DataTable({
-            pageLength: 10,
-            scrollY: '300px',
-            scrollCollapse: true,
-            paging: true
-          });
+        let tbody = "";
+        for (let i = 1; i < lines.length; i++) {
+          const cells = lines[i].split(",");
+          tbody += "<tr>";
+          cells.forEach(c => { tbody += `<td>${c}</td>` });
+          tbody += "</tr>";
         }
+        $("#dataTable tbody").html(tbody);
+
+        $('#dataTable').DataTable();
       });
     });
   </script>
