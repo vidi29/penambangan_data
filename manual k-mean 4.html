@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Data Excel + K-Means Manual</title>
+  <title>Data Excel Otomatis + K-Means</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
     body {
@@ -19,9 +19,9 @@
     th, td {
       border: 1px solid #999;
       padding: 8px 12px;
-      text-align: left; /* sejajar kiri agar mirip Excel */
+      text-align: left;
       vertical-align: middle;
-      white-space: nowrap; /* agar teks tetap menyamping */
+      white-space: nowrap;
     }
     th {
       background-color: #e2e2e2;
@@ -45,8 +45,7 @@
 </head>
 <body>
   <h2>Data dari Excel (.xlsx)</h2>
-  <input type="file" id="upload" accept=".xlsx" />
-  <div id="tabel-container"></div>
+  <div id="tabel-container">Memuat data...</div>
 
   <div class="link-kmeans">
     <h3>Perhitungan Manual K-Means:</h3>
@@ -56,10 +55,10 @@
   </div>
 
   <script>
-    document.getElementById('upload').addEventListener('change', function (e) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const data = new Uint8Array(e.target.result);
+    fetch('k-mean 4 cluster.xlsx')
+      .then(res => res.arrayBuffer())
+      .then(buffer => {
+        const data = new Uint8Array(buffer);
         const workbook = XLSX.read(data, { type: 'array' });
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
         const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
@@ -75,11 +74,12 @@
           html += '</tr>';
         });
         html += '</table>';
-
         document.getElementById('tabel-container').innerHTML = html;
-      };
-      reader.readAsArrayBuffer(this.files[0]);
-    });
+      })
+      .catch(error => {
+        document.getElementById('tabel-container').innerText = 'Gagal memuat data: ' + error;
+        console.error('Gagal membaca file Excel:', error);
+      });
   </script>
 </body>
 </html>
