@@ -508,16 +508,30 @@ plt.show()
 <div id="excelData"></div>
 
 <script>
-  document.getElementById('uploadExcel').addEventListener('change', function(e) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const data = new Uint8Array(e.target.result);
-      const workbook = XLSX.read(data, { type: 'array' });
-      const sheet = workbook.Sheets[workbook.SheetNames[0]];
-      const html = XLSX.utils.sheet_to_html(sheet);
-      document.getElementById('excelData').innerHTML = html;
+  // Ambil elemen input file dan kontainer hasil
+  const inputFile = document.getElementById('uploadExcel');
+  const resultContainer = document.getElementById('excelData');
+
+  // Tambahkan event listener ketika file dipilih
+  inputFile.addEventListener('change', function(event) {
+    const selectedFile = event.target.files[0]; // Ambil file Excel yang dipilih
+    if (!selectedFile) return;
+
+    const fileReader = new FileReader(); // Buat objek pembaca file
+
+    // Ketika file berhasil dibaca
+    fileReader.onload = function(event) {
+      const arrayBuffer = new Uint8Array(event.target.result); // Konversi hasil baca
+      const workbook = XLSX.read(arrayBuffer, { type: 'array' }); // Baca workbook Excel
+
+      const firstSheetName = workbook.SheetNames[0]; // Ambil nama sheet pertama
+      const firstSheet = workbook.Sheets[firstSheetName]; // Ambil isi sheet
+
+      const htmlTable = XLSX.utils.sheet_to_html(firstSheet); // Konversi ke HTML tabel
+      resultContainer.innerHTML = htmlTable; // Tampilkan di halaman
     };
-    reader.readAsArrayBuffer(e.target.files[0]);
+
+    fileReader.readAsArrayBuffer(selectedFile); // Baca file sebagai array buffer
   });
 </script>
 
