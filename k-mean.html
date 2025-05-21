@@ -393,9 +393,66 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
 
-<h1>K-Means Clustering</h1>
-<p>K-Means adalah salah satu algoritma unsupervised learning, artinya algoritma ini digunakan saat data yang kita punya nggak ada label-nya (misalnya: kelompok A, B, C). 
-  Jadi, K-Means berusaha mengelompokkan data secara otomatis ke dalam beberapa kelompok (disebut cluster) berdasarkan kemiripan datanya.</p>
+<h1>Catatan K-Means Clustering</h1>
+
+  <h2>1. Pengertian</h2>
+  <p>
+    K-Means itu salah satu algoritma <em>unsupervised learning</em> buat ngelompokkin data berdasarkan kemiripan.
+    Jadi misalnya kita punya data acak, K-Means bakal ngelompokin data itu ke dalam beberapa <strong>cluster</strong>,
+    berdasarkan jarak terdekat antar titik dan pusat kelompok (<strong>centroid</strong>).
+  </p>
+
+  <h2>2. Tujuan</h2>
+  <p>
+    Membagi data ke dalam <strong>K kelompok</strong> supaya data yang mirip-mirip masuk ke kelompok yang sama.
+  </p>
+
+  <h2>3. Istilah Penting</h2>
+  <ul>
+    <li><strong>Cluster:</strong> Kelompok data yang punya ciri atau pola yang mirip.</li>
+    <li><strong>Centroid:</strong> Titik pusat dari suatu cluster.</li>
+    <li><strong>Euclidean Distance:</strong> Cara ngukur jarak antar titik.</li>
+  </ul>
+
+  <h2>4. Langkah-Langkah K-Means</h2>
+  <ol>
+    <li>Tentukan nilai <strong>K</strong> (jumlah cluster).</li>
+    <li>Pilih <strong>K centroid awal</strong> (biasanya acak).</li>
+    <li>Hitung jarak tiap data ke semua centroid (pakai rumus Euclidean).</li>
+    <li>Kelompokin data ke centroid terdekat.</li>
+    <li>Update posisi centroid berdasarkan rata-rata data dalam cluster.</li>
+    <li>Ulangi langkah 3–5 sampai konvergen.</li>
+  </ol>
+
+  <h2>5. Rumus Euclidean Distance</h2>
+  <pre>d = √((x₁ - c₁)² + (x₂ - c₂)²)</pre>
+
+  <h2>6. Kelebihan K-Means</h2>
+  <ul>
+    <li>Simpel dan cepat</li>
+    <li>Cocok buat data besar</li>
+    <li>Mudah diimplementasikan</li>
+  </ul>
+
+  <h2>7. Kekurangan K-Means</h2>
+  <ul>
+    <li>Harus tentuin K di awal</li>
+    <li>Hasil bisa beda tergantung centroid awal</li>
+    <li>Kurang cocok kalau bentuk cluster-nya aneh (non-bulat)</li>
+  </ul>
+
+  <h2>8. Cara Menentukan K</h2>
+  <ul>
+    <li><strong>Elbow Method:</strong> Lihat grafik error vs K, cari "titik siku".</li>
+    <li><strong>Silhouette Score:</strong> Nilai antar -1 s/d 1. Semakin tinggi semakin bagus.</li>
+  </ul>
+
+  <h2>9. Contoh Kasus</h2>
+  <ul>
+    <li>Ngeklaster pelanggan</li>
+    <li>Segmentasi wilayah</li>
+    <li>Kelompokkan berita/dokumen</li>
+  </ul>
 
 <div class="cell">
     <h3>Menghitung K-Mean</h3>
