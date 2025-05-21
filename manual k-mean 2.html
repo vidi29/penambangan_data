@@ -2,12 +2,14 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Data CSV + K-Means Manual</title>
+  <title>Data Excel + K-Means Manual</title>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     #tabel-container { max-height: 400px; overflow-y: auto; }
-    .link-kmeans { margin-top: 20px; }
+    .link-kmeans {
+      margin-top: 20px;
+    }
     .link-kmeans a {
       display: inline-block;
       margin-right: 15px;
@@ -24,7 +26,7 @@
   </style>
 </head>
 <body>
-  <h2>Data dari CSV</h2>
+  <h2>Data dari Excel (.xlsx)</h2>
   <div id="tabel-container">
     <table id="tabel-data" class="display" style="width:100%">
       <thead></thead>
@@ -41,34 +43,34 @@
 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script>
-    $(document).ready(function () {
-      $.ajax({
-        url: 'k-mean.xlsx',
-        dataType: 'text',
-        success: function (data) {
-          const lines = data.trim().split('\n');
-          const headers = lines[0].split(',');
-          let theadHTML = '<tr>';
-          headers.forEach(h => theadHTML += `<th>${h}</th>`);
-          theadHTML += '</tr>';
-          $('#tabel-data thead').html(theadHTML);
+    fetch('k-mean.xlsx')
+      .then(res => res.arrayBuffer())
+      .then(ab => {
+        const workbook = XLSX.read(ab, { type: "array" });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const json = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
-          const tbodyHTML = lines.slice(1).map(line => {
-            const cells = line.split(',');
-            return '<tr>' + cells.map(c => `<td>${c}</td>`).join('') + '</tr>';
-          }).join('');
-          $('#tabel-data tbody').html(tbodyHTML);
+        const headers = json[0];
+        const data = json.slice(1);
 
-          $('#tabel-data').DataTable({
-            pageLength: 10,
-            scrollY: '300px',
-            scrollCollapse: true,
-            paging: true
-          });
-        }
+        let theadHTML = '<tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr>';
+        $('#tabel-data thead').html(theadHTML);
+
+        let tbodyHTML = data.map(row => {
+          return '<tr>' + headers.map((_, i) => `<td>${row[i] || ''}</td>`).join('') + '</tr>';
+        }).join('');
+        $('#tabel-data tbody').html(tbodyHTML);
+
+        $('#tabel-data').DataTable({
+          pageLength: 10,
+          scrollY: '300px',
+          scrollCollapse: true,
+          paging: true
+        });
       });
-    });
   </script>
 </body>
 </html>
