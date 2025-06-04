@@ -9,13 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Fuzzy C-Mean</title>
-
-    <script>
-    MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
-    };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
   
   
   
@@ -420,51 +413,6 @@ document.write(`
 <br>Derajat Keanggotaan	: Data bisa termasuk ke lebih dari satu kluster
 <br>Output	: Matriks derajat keanggotaan + pusat kluster
 </p>
-
-<h2>Algoritma Fuzzy C-Means (FCM)</h2>
-
-  <ol>
-    <li><strong>Inisialisasi:</strong></li>
-    <ul>
-      <li>Pilih jumlah kluster \( c \)</li>
-      <li>Pilih nilai fuzzifier \( m \)</li>
-      <li>Inisialisasi matriks keanggotaan awal \( U^{(0)} \) secara acak, dengan syarat:
-        \[
-        \sum_{i=1}^{c} u_{ik} = 1,\quad \forall k
-        \]
-      </li>
-    </ul>
-
-    <li><strong>Hitung pusat kluster \( V \):</strong></li>
-    <div>
-      \[
-      v_i = \frac{\sum_{k=1}^{n} u_{ik}^m \cdot x_k}{\sum_{k=1}^{n} u_{ik}^m}
-      \]
-    </div>
-
-    <li><strong>Update derajat keanggotaan \( U \):</strong></li>
-    <div>
-      \[
-      u_{ik} = \frac{1}{\sum_{j=1}^{c} \left( \frac{\|x_k - v_i\|}{\|x_k - v_j\|} \right)^{\frac{2}{m - 1}}}
-      \]
-    </div>
-
-    <li><strong>Cek konvergensi:</strong></li>
-    <ul>
-      <li>Hitung selisih antara matriks keanggotaan sebelum dan sesudah update.</li>
-      <li>Jika perubahan &lt; toleransi \( \epsilon \), hentikan proses.</li>
-    </ul>
-
-    <li><strong>Iterasi ulang:</strong></li>
-    <ul>
-      <li>Kembali ke langkah 2 sampai algoritma konvergen.</li>
-    </ul>
-
-    <li><strong>Tentukan kluster akhir:</strong></li>
-    <ul>
-      <li>Untuk setiap data \( x_k \), tentukan kluster utamanya berdasarkan nilai \( u_{ik} \) tertinggi.</li>
-    </ul>
-  </ol>
 
 <b>Kelebihan FCM</b>
   <ul>
