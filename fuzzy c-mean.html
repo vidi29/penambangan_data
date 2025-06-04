@@ -414,15 +414,21 @@ document.write(`
 <br>Output	: Matriks derajat keanggotaan + pusat kluster
 </p>
 
-<b>Prinsip Kerja FCM</b>
-<p>FCM bekerja dengan prinsip optimisasi fungsi tujuan (objective function) berikut:</p>
-<div>
-  \[
-  J(U,V)=\sum_{i=1}^{c} \sum_{k=1}^{n} u_{ik}^m \|x_k - v_i\|^2
-  \]
-</div>
+<b>Kelebihan FCM</b>
+  <ul>
+    <li>Lebih fleksibel daripada K-Means karena mengizinkan keanggotaan parsial.</li>
+    <li>Cocok untuk data yang tidak jelas batasnya antar kluster.</li>
+    <li>Memberikan informasi ketidakpastian tentang keanggotaan kluster.</li>
+  </ul>
 
-<p>Fungsi objektif FCM adalah $J(U,V)=\sum_{i=1}^{c} \sum_{k=1}^{n} u_{ik}^m \|x_k - v_i\|^2$</p>
+<b>2.6 Kekurangan FCM</b>
+  <ul>
+    <li>Sensitif terhadap inisialisasi awal.</li>
+    <li>Perlu menentukan jumlah kluster \( c \) secara manual.</li>
+    <li>Komputasi agak lambat untuk dataset besar.</li>
+    <li>Hasil bisa berbeda-beda setiap kali running karena inisialisasi acak.</li>
+  </ul>
+
 
 
 </section>
