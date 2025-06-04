@@ -433,13 +433,7 @@ document.write(`
     <li>Hasil bisa berbeda-beda setiap kali running karena inisialisasi acak.</li>
   </ul>
 
-  <h2>Hasil Fuzzy C-Means (Iris)</h2>
-
-  <py-config>
-    packages = ["scikit-learn", "numpy"]
-  </py-config>
-
-  <py-script>
+  <pre>
   from sklearn.datasets import load_iris
   import numpy as np
 
@@ -487,9 +481,7 @@ document.write(`
       f"Jumlah fitur: {n_features}\n\n"
       f"Label hasil kluster (0–2):\n{labels.tolist()}"
   )
-  </py-script>
-
-  <pre id="output">Menjalankan FCM...</pre>
+      </pre>
 
 
 
