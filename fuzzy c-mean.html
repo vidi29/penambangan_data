@@ -62,8 +62,12 @@
     MathJax = {
       tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
     };
-   </script>
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Content with notebooks" href="notebooks.html" />
@@ -428,6 +432,64 @@ document.write(`
     <li>Komputasi agak lambat untuk dataset besar.</li>
     <li>Hasil bisa berbeda-beda setiap kali running karena inisialisasi acak.</li>
   </ul>
+
+  <h2>Hasil Fuzzy C-Means (Iris)</h2>
+
+  <py-config>
+    packages = ["scikit-learn", "numpy"]
+  </py-config>
+
+  <py-script>
+  from sklearn.datasets import load_iris
+  import numpy as np
+
+  # Fungsi jarak Euclidean
+  def euclidean_distance(x, v):
+      return np.linalg.norm(x - v)
+
+  # Load data iris
+  iris = load_iris()
+  X = iris.data
+  n_samples = X.shape[0]
+  n_features = X.shape[1]
+  n_clusters = 3
+  m = 2.0
+  epsilon = 0.01
+  max_iter = 100
+
+  # Inisialisasi derajat keanggotaan
+  U = np.random.dirichlet(np.ones(n_clusters), size=n_samples).T
+
+  # Algoritma FCM
+  for _ in range(max_iter):
+      U_old = U.copy()
+      V = np.zeros((n_clusters, n_features))
+      for i in range(n_clusters):
+          um = U[i] ** m
+          V[i] = np.dot(um, X) / np.sum(um)
+      for i in range(n_clusters):
+          for k in range(n_samples):
+              denom = sum([
+                  (max(euclidean_distance(X[k], V[i]), 1e-10) / 
+                  max(euclidean_distance(X[k], V[j]), 1e-10)) ** (2 / (m - 1))
+                  for j in range(n_clusters)
+              ])
+              U[i][k] = 1 / denom
+      if np.linalg.norm(U - U_old) < epsilon:
+          break
+
+  # Label dari keanggotaan terbesar
+  labels = np.argmax(U, axis=0)
+
+  from js import document
+  document.getElementById("output").innerText = (
+      f"Jumlah data: {n_samples}\n"
+      f"Jumlah fitur: {n_features}\n\n"
+      f"Label hasil kluster (0–2):\n{labels.tolist()}"
+  )
+  </py-script>
+
+  <pre id="output">Menjalankan FCM...</pre>
 
 
 
