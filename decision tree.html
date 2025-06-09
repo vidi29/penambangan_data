@@ -408,83 +408,86 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
 
-<H1>Fuzzy C-Mean</H1>
-<p>Fuzzy C-Means (FCM) adalah metode clustering atau pengelompokan data yang berbasis pada logika fuzzy. 
-  Berbeda dengan metode klusterisasi klasik seperti K-Means, di mana satu data hanya bisa menjadi anggota satu kluster saja, dalam FCM, sebuah data dapat menjadi anggota dari lebih dari satu kluster dengan derajat keanggotaan tertentu.
-  Tujuan utamanya yakni mencari pusat kluster sedemikian rupa sehingga setiap data memiliki derajat keanggotaan terhadap tiap kluster.</p>
+<H1>Decision Tree</H1>
+<b>Apa itu Decision Tree?</b>
+        <p>Decision Tree adalah algoritma machine learning yang digunakan untuk membuat model prediksi dengan cara membagi data ke dalam beberapa kelompok berdasarkan kondisi tertentu. 
+            Model ini digambarkan seperti pohon, dengan setiap "simpul" (node) yang mewakili keputusan berdasarkan atribut, dan "daun" (leaf) yang menunjukkan hasil akhirnya.</p>
 
-<b>Karakteristik Fuzzy C-Mean</b>
-<p>Fitur : Deskripsi
-<br>Metode Klusterisasi	: Unsupervised learning (tidak memerlukan label)
-<br>Jenis Klusterisasi :	Fuzzy (soft clustering)
-<br>Derajat Keanggotaan	: Data bisa termasuk ke lebih dari satu kluster
-<br>Output	: Matriks derajat keanggotaan + pusat kluster
-</p>
+        <b>Bagaimana Decision Tree Bekerja?</b>
+        <p>Pohon keputusan bekerja dengan memisahkan data melalui serangkaian keputusan. 
+            Setiap "node" pada pohon menunjukkan aturan pembagian berdasarkan atribut tertentu, dan cabang-cabangnya menggambarkan hasil dari keputusan tersebut. Setiap daun berisi hasil atau prediksi akhir.</p>
 
-<b>Kelebihan FCM</b>
-  <ul>
-    <li>Lebih fleksibel daripada K-Means karena mengizinkan keanggotaan parsial.</li>
-    <li>Cocok untuk data yang tidak jelas batasnya antar kluster.</li>
-    <li>Memberikan informasi ketidakpastian tentang keanggotaan kluster.</li>
-  </ul>
+        <b>Kriteria Pemilihan Atribut</b>
+        <p>Beberapa kriteria yang sering digunakan untuk memilih atribut terbaik adalah:</p>
+        <ul>
+            <li><strong>Entropy:</strong> Mengukur ketidakpastian dalam data.</li>
+            <li><strong>Information Gain:</strong> Mengukur pengurangan ketidakpastian setelah membagi data berdasarkan atribut.</li>
+            <li><strong>Gini Index:</strong> Mengukur kemurnian data dalam sebuah kelompok.</li>
+        </ul>
 
-<b>Kekurangan FCM</b>
-  <ul>
-    <li>Sensitif terhadap inisialisasi awal.</li>
-    <li>Perlu menentukan jumlah kluster \( c \) secara manual.</li>
-    <li>Komputasi agak lambat untuk dataset besar.</li>
-    <li>Hasil bisa berbeda-beda setiap kali running karena inisialisasi acak.</li>
-  </ul>
+        <b>Langkah-langkah Membuat Decision Tree</b>
+        <ol>
+            <li>Pilih atribut terbaik berdasarkan kriteria tertentu (misalnya Information Gain atau Gini Index).</li>
+            <li>Pisahkan data berdasarkan atribut yang dipilih.</li>
+            <li>Ulangi langkah 1 dan 2 untuk setiap subset yang terbentuk.</li>
+            <li>Setelah semua data diklasifikasikan, tentukan hasil di daun pohon.</li>
+        </ol>
 
-  <pre>
-  from sklearn.datasets import load_iris
-  import numpy as np
+        <b>Contoh Sederhana</b>
+        <p>Misalkan kita memiliki data tentang apakah seseorang akan membeli tiket konser berdasarkan usia dan pendapatan:</p>
+        <pre>
+| Usia  | Pendapatan | Membeli Tiket |
+|-------|------------|---------------|
+| 18-25 | Tinggi     | Ya            |
+| 18-25 | Rendah     | Tidak         |
+| 26-35 | Tinggi     | Ya            |
+| 26-35 | Tinggi     | Ya            |
+| 36-50 | Rendah     | Tidak         |
+        </pre>
+        <p>Proses pembuatan decision tree dari data ini akan membentuk pohon seperti berikut:</p>
+        <img src="images/decision_tree_example.png" alt="Contoh Pohon Keputusan" class="image-example">
 
-  # Fungsi jarak Euclidean
-  def euclidean_distance(x, v):
-      return np.linalg.norm(x - v)
+        <b>Keuntungan dan Kelemahan Decision Tree</b>
+        <p><strong>Keuntungan:</strong></p>
+        <ul>
+            <li>Mudah dipahami dan diinterpretasikan.</li>
+            <li>Tidak memerlukan praproses data yang rumit.</li>
+            <li>Dapat menangani data numerik dan kategorikal.</li>
+        </ul>
+        <p><strong>Kelemahan:</strong></p>
+        <ul>
+            <li>Rentan terhadap overfitting, terutama jika pohon terlalu dalam.</li>
+            <li>Kurang cocok untuk data yang sangat besar atau berisik.</li>
+            <li>Keputusan bisa bias jika ada atribut yang dominan.</li>
+        </ul>
 
-  # Load data iris
-  iris = load_iris()
-  X = iris.data
-  n_samples = X.shape[0]
-  n_features = X.shape[1]
-  n_clusters = 3
-  m = 2.0
-  epsilon = 0.01
-  max_iter = 100
+        <b>Implementasi Decision Tree di Python</b>
+        <pre>
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn import tree
 
-  # Inisialisasi derajat keanggotaan
-  U = np.random.dirichlet(np.ones(n_clusters), size=n_samples).T
+# Memuat dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
 
-  # Algoritma FCM
-  for _ in range(max_iter):
-      U_old = U.copy()
-      V = np.zeros((n_clusters, n_features))
-      for i in range(n_clusters):
-          um = U[i] ** m
-          V[i] = np.dot(um, X) / np.sum(um)
-      for i in range(n_clusters):
-          for k in range(n_samples):
-              denom = sum([
-                  (max(euclidean_distance(X[k], V[i]), 1e-10) / 
-                  max(euclidean_distance(X[k], V[j]), 1e-10)) ** (2 / (m - 1))
-                  for j in range(n_clusters)
-              ])
-              U[i][k] = 1 / denom
-      if np.linalg.norm(U - U_old) < epsilon:
-          break
+# Membagi data menjadi training dan testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 
-  # Label dari keanggotaan terbesar
-  labels = np.argmax(U, axis=0)
+# Membuat model decision tree
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
 
-  from js import document
-  document.getElementById("output").innerText = (
-      f"Jumlah data: {n_samples}\n"
-      f"Jumlah fitur: {n_features}\n\n"
-      f"Label hasil kluster (0–2):\n{labels.tolist()}"
-  )
-      </pre>
+# Prediksi dan akurasi
+y_pred = model.predict(X_test)
+accuracy = (y_pred == y_test).mean()
+print(f"Akurasi: {accuracy}")
+
+# Visualisasi pohon keputusan
+tree.plot_tree(model)
+        </pre>
 
 <p>Klik tombol berikut untuk melihat file kode Fuzzy C-Mean:</p>
 <a href="fcm.ipynb">📘 Lihat Kode Fuzzy C-Mean</a>
