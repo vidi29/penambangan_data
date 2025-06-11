@@ -467,30 +467,43 @@ document.write(`
 
         <b>Implementasi Decision Tree di Python</b>
         <pre>
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
-from sklearn import tree
+#| echo: false
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-# Memuat dataset
-iris = load_iris()
-X = iris.data
-y = iris.target
+# Load Iris dataset
+iris = sns.load_dataset('iris')
 
-# Membagi data menjadi training dan testing
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+# Filter hanya Setosa dan gabungkan Versicolor + Virginica sebagai "Other"
+iris['species_grouped'] = iris['species'].apply(lambda x: 'setosa' if x == 'setosa' else 'non-setosa')
 
-# Membuat model decision tree
-model = DecisionTreeClassifier()
-model.fit(X_train, y_train)
+# Plotting
+plt.figure(figsize=(8, 6))
+sns.scatterplot(
+    data=iris,
+    x='sepal_length',
+    y='sepal_width',
+    hue='species_grouped',
+    style='species_grouped',
+    palette={'setosa': 'green', 'non-setosa': 'orange'},
+    markers={'setosa': 'o', 'non-setosa': '^'},  # <-- Segitiga untuk non-setosa
+    s=100
+)
 
-# Prediksi dan akurasi
-y_pred = model.predict(X_test)
-accuracy = (y_pred == y_test).mean()
-print(f"Akurasi: {accuracy}")
+# Tambahkan garis batas
+plt.axvline(x=5.45, color='red', linestyle='--', linewidth=2, label='Batas Sepal Length = 5.45')
+plt.axhline(y=2.8, color='blue', linestyle='--', linewidth=2, label='Batas Sepal Width = 2.8')
 
-# Visualisasi pohon keputusan
-tree.plot_tree(model)
+# Label dan judul
+plt.title('Scatter Plot of Sepal Length vs Sepal Width (Setosa vs Non-Setosa)')
+plt.xlabel('Sepal Length (cm)')
+plt.ylabel('Sepal Width (cm)')
+
+# Legenda dan grid
+plt.legend(title='Species Group')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
         </pre>
 
 <p>Klik tombol berikut untuk mendownload file kode Decision Tree:</p>
