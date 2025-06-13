@@ -410,9 +410,35 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
 
-<H1>Diskrinisasi</H1>
+<H1>Diskritisasi (Discretization)</H1>
+<b>Teknik Binning</b>
+<p>Data binning atau bucketing adalah metode pra-pemrosesan data yang digunakan untuk mengurangi dampak kesalahan pengamatan. 
+  Nilai data asli dibagi ke dalam interval-interval kecil yang disebut bin, lalu nilai-nilai tersebut digantikan oleh suatu nilai umum yang dihitung untuk setiap bin tersebut. 
+  Metode ini memiliki efek menghaluskan (smoothing) pada data masukan dan juga dapat mengurangi risiko overfitting terutama pada kasus dataset yang kecil. 
+  Ada beberapa metode di data mining (data mining methods) yang memerlukan diskritisasi (discretization) sebelumnya diantaranya adalah</p>
 
+<h2>1. Naive Bayes Classifier</h2>
+<p><strong>Mengapa butuh diskritisasi?</strong></p>
+<ul>
+  <li>Naive Bayes versi kategorikal (Categorical Naive Bayes) bekerja dengan variabel kategoris atau diskrit.</li>
+  <li>Jika fitur tidak didiskritisasi, maka Gaussian Naive Bayes digunakan yang mengasumsikan distribusi normal.</li>
+  <li>Diskritisasi kadang tetap dilakukan untuk menghindari asumsi distribusi tersebut.</li>
+</ul>
 
+<h2>Decision Tree (ID3, C4.5)</h2>
+<p><strong>Mengapa butuh diskritisasi?</strong></p>
+<ul>
+  <li>ID3 hanya menerima atribut kategoris, sehingga diskritisasi diperlukan.</li>
+  <li>C4.5 dapat menangani data numerik dengan mencari titik pemisah (split point), tetapi diskritisasi masih berguna dalam beberapa kasus.</li>
+</ul>
+
+<h2>Mengapa Binning Penting?</h2>
+<ul>
+  <li><strong>Penghalusan Data (Data Smoothing):</strong> Mengurangi dampak variasi kecil dalam pengamatan.</li>
+  <li><strong>Penanganan Outlier:</strong> Mengurangi pengaruh outlier pada analisis.</li>
+  <li><strong>Analisis yang Lebih Baik:</strong> Mempermudah analisis dan visualisasi data.</li>
+  <li><strong>Feature Engineering:</strong> Variabel hasil binning bisa lebih intuitif dan bermanfaat dalam pemodelan prediktif.</li>
+</ul>
 
 </section>
 
