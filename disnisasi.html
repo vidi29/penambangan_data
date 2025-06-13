@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Penambangan Data</title>
+    <title>Fuzzy C-Mean</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,12 +57,21 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
+    <script>
+    MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Content with notebooks" href="notebooks.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +134,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +152,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,21 +183,21 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Data Understanding
                 </a>
             </li>
-            <li class="toctree-l1"><a class="reference internal" href="knn.html">KNN</a></li>
-            <li class="toctree-l1"><a class="reference internal" href="lof.html">LOF</a></li>
-            <li class="toctree-l1"><a class="reference internal" href="naive bayes.html">Naive Bayes</a></li>
-            <li class="toctree-l1"><a class="reference internal" href="UTS_Vidi.html">UTS</a></li>
-            <li class="toctree-l1"><a class="reference internal" href="k-mean.html">K-Mean</a></li>
-            <li class="toctree-l1"><a class="reference internal" href="fuzzy c-mean.html">Fuzzy C-Mean</a></li>
-            <li class="toctree-l1"><a class="reference internal" href="decision tree.html">Decision Tree</a></li>
-            <li class="toctree-l1"><a class="reference internal" href="disnisasi.html">Diskrinisasi</a></li>
         </ul>
-        <ul class="nav bd-sidenav"></ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="knn.html">KNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lof.html">LOF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="naive bayes.html">Naive Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS_Vidi.html">UTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="k-mean.html">K-Mean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fuzzy c-mean.html">Fuzzy C-Mean</a></li>
+<li class="toctree-l1 current active"><a class="reference internal" href="decision tree.html">Decision Tree</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -261,7 +268,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +298,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/markdown.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +369,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -373,11 +382,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Penambangan Data</h1>
+    <h1>Markdown Files</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -387,184 +407,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-your-jupyter-book">
-<h1>Penambangan Data</h1>
-<h2>Data Understanding</h2>
-<p>Data Understanding adalah tahap awal dalam proses analisis data yang bertujuan untuk memahami karakteristik dan struktur data sebelum melakukan pemrosesan lebih lanjut. 
-Tahap ini sangat penting dalam berbagai metode analisis data, termasuk dalam CRISP-DM (Cross-Industry Standard Process for Data Mining).</p>
-<p><b> Tujuan Data Understanding </b></p>
-<p>1. Memahami Struktur Data</p>
-<ul>
-  <li>Mengetahui sumber data (misalnya: database, file CSV, API, dll.).</li>
-  <li>Mengecek jumlah kolom dan baris dalam dataset.</li>
-  <li>Mengidentifikasi tipe data setiap kolom (numerik, kategorikal, teks, dll.).</li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
 
-<p>1. Menilai Kualitas Data</p>
-<ul>
-  <li>Mengecek data yang hilang (missing values).</li>
-  <li>duplikasi data.</li>
-  <li>Menganalisis apakah ada inkonsistensi atau kesalahan dalam data.</li>
-</ul>
+<H1>Diskrinisasi</H1>
 
-<p>3. Mengeksplorasi Distribusi Data</p>
-<ul>
-  <li>Menganalisis distribusi data menggunakan statistik deskriptif seperti mean, median, modus, standar deviasi, dan range.</li>
-  <li>Menggunakan visualisasi data seperti histogram, boxplot, scatter plot, dll.</li>
-</ul>
 
-<p>Menganalisis Hubungan Antar-Variabel</p>
-<ul>
-  <li>correlation matrix untuk melihat hubungan antar-variabel numerik.</li>
-  <li>Membuat pivot table atau crosstab untuk memahami hubungan variabel kategorikal.</li>
-</ul>
 
-<p>Teknik yang Digunakan dalam Data Understanding</p>
-<ul>
-  <li>Descriptive Statistics → Menggunakan mean, median, modus, standar deviasi, dsb.</li>
-  <li>Data Visualization → Menggunakan grafik seperti histogram, boxplot, scatter plot, heatmap.</li>
-  <li> Profiling → Mengecek outliers, missing values, duplikasi data.</li>
-</ul>
-
-<p><b>Contoh Penerapan</b>
-<br>Misalkan Anda memiliki dataset transaksi penjualan. Pada tahap Data Understanding, Anda akan:
-<ul>
-  <li>Mengecek jumlah transaksi dan jenis barang yang terjual.</li>
-  <li> apakah ada data pelanggan yang kosong.</li>
-  <li>distribusi harga barang yang dijual.</li>
-  <li>Meneliti korelasi antara harga dan jumlah barang yang dibeli.</li>
-</ul>
-tahap ini selesai, data dapat diproses lebih lanjut dalam Data Preparation sebelum analisis utama dilakukan.</p>
-
-<h2>Tipe-Tipe Data dalam Data Mining</h2>
-<p>Dalam Data Mining, kita akan sering berurusan dengan berbagai jenis data yang memiliki karakteristik yang berbeda-beda. 
-  Setiap tipe data ini akan mempengaruhi cara kita menganalisis dan memproses data. 
-  Berikut adalah tipe-tipe data yang paling umum dalam Data Mining:</p>
-<p>1. Data Numerik (Numerical Data)
-<br>Data yang berbentuk angka dan bisa dihitung atau diukur. Contoh : </p>
-<ul>
-  <li>Pendapatan (dalam juta)</li>
-  <li>Umur seseorang</li>
-  <li>Jumlah barang terjual</li>
-</ul>
-Jenis :
-<ul>
-  <li>Discrete: Data yang hanya memiliki nilai-nilai tertentu, seperti jumlah barang yang terjual (0, 1, 2, 3, dst).</li>
-  <li>Continuous: Data yang bisa memiliki nilai dalam rentang tertentu, seperti tinggi badan (175, 175.5, 176, dst).</li>
-</ul>
-<p>Biasanya digunakan untuk analisis statistik dan algoritma regresi.</p>
-
-<p>2. . Data Kategorikal (Categorical Data)
-<br>Data yang berisi kategori atau label, tidak memiliki urutan atau ukuran numerik. Contoh:</p>
-<ul>
-  <li>Warna mobil (merah, biru, hitam)</li>
-  <li>Jenis kelamin (pria, wanita)</li>
-  <li>Status pernikahan (menikah, lajang)</li>  
-</ul>
-Jenis:
-<ul>
-  <li>Nominal: Kategori yang tidak memiliki urutan, seperti jenis kelamin atau warna mobil.</li>
-  <li>Ordinal: Kategori yang memiliki urutan, seperti tingkat pendidikan (SD, SMP, SMA, S1).</li>
-</ul>
-<p>Umumnya digunakan dalam algoritma klasifikasi atau clustering.</p>
-
-<p>3. Data Teks (Text Data)
-<br>Data yang berupa teks bebas, seperti dokumen, artikel, atau tweet. Contoh:</p>
-<ul>
-  <li>Artikel berita</li>
-  <li>Komentar di media sosial</li>
-  <li>Ulasan produk</li>
-</ul>
-<p>Biasanya digunakan dalam analisis sentimen, pencarian informasi, dan pengolahan bahasa alami (NLP). Algoritma seperti TF-IDF atau word embeddings digunakan untuk mengubah teks menjadi format yang bisa dianalisis.</p>
-
-<p>4. Data Waktu (Time Series Data)
-<br>Data yang dikumpulkan berdasarkan waktu. Biasanya digunakan untuk menganalisis tren atau pola dalam data sepanjang waktu. Contoh:</p>
-<ul>
-  <li>Harga saham tiap hari</li>
-  <li>Suhu udara per jam</li>
-  <li>Penjualan produk tiap bulan</li>
-</ul>
-<p>Digunakan dalam peramalan (forecasting), analisis tren, dan prediksi.</p>
-
-<p>5. Data Geospasial (Spatial Data)
-<br>Data yang berkaitan dengan lokasi geografis dan ruang. Contoh:</p>
-<ul>
-  <li>Lokasi titik dalam peta (latitude, longitude)</li>
-  <li>Batas wilayah negara</li>
-</ul>
-<p>Digunakan dalam analisis lokasi, pemetaan, dan sistem informasi geografis (GIS).</p>
-
-<p>6. Data Gambar dan Video (Image and Video Data)
-<br>Data berupa gambar atau video, sering kali berupa file yang sangat besar dan memerlukan teknik pemrosesan khusus. Contoh:</p>
-<ul>
-  <li>Foto yang diambil dengan kamera</li>
-  <li>Video rekaman</li>
-</ul>
-<p>Digunakan dalam pengenalan objek, pengolahan citra, dan analisis video.</p>
-
-<p>7. Data Biner (Binary Data)
-<br>Data yang hanya memiliki dua kemungkinan nilai, yaitu 0 dan 1. Contoh:</p>
-<ul>
-  <li>Status aktif/tidak aktif (1/0)</li>
-  <li>Ada/tidak ada (1/0)</li>
-</ul>
-<p>Sering digunakan dalam klasifikasi biner, seperti spam/not spam atau lulus/tidak lulus.</p>
-
-<h2>Mengumpulkan Data (Data Collection)</h2>
-<p>Proses pengumpulan data bisa berasal dari berbagai sumber seperti survei, database, API, sensor, atau file yang sudah ada. 
-  Data yang dikumpulkan biasanya dalam bentuk data numerik, kategorikal, atau kombinasi keduanya. 
-  Langkah pertama dalam proses ini adalah memastikan data yang terkumpul bersih dan representatif agar dapat digunakan dalam proses analisis.
-<br>Langkah-Langkah Mengumpulkan Data:</p>
-<ol>
-  <li>Identifikasi Sumber Data: Tentukan sumber data yang akan digunakan, apakah itu data internal, data publik, atau data dari pihak ketiga.</li>
-  <li>Pengumpulan Data: Gunakan alat yang tepat untuk mengumpulkan data dari sumber yang telah ditentukan (misalnya, menggunakan API, scraping data web, atau melalui pengisian formulir).</li>
-  <li>Pembersihan Data: Data yang dikumpulkan mungkin memiliki nilai yang hilang, duplikat, atau kesalahan input yang perlu dibersihkan.</li>
-  <li>Transformasi Data: Terkadang data perlu diubah formatnya atau diproses lebih lanjut agar dapat digunakan dengan algoritma analisis.</li>
-</ol>
-
-<h2>Deteksi Outlier</h2>
-<p>Outlier adalah nilai yang sangat berbeda dari nilai-nilai lainnya dalam data. 
-  Deteksi outlier sangat penting karena outlier dapat mempengaruhi model yang kita bangun, terutama dalam algoritma berbasis statistik. 
-  Outlier dapat menyebabkan model menjadi bias atau memberikan hasil yang tidak akurat.
-<br>Jenis-Jenis Outlier:</p>
-<ul>
-  <li>Global Outliers: Outlier yang sangat berbeda dengan mayoritas data di seluruh dataset.</li>
-  <li>Contextual Outliers: Outlier yang hanya berbeda dalam konteks tertentu, misalnya, suhu yang sangat tinggi hanya dianggap outlier dalam cuaca dingin, tetapi normal dalam cuaca panas.</li>
-  <li>Collective Outliers: Sekelompok data yang bersama-sama menunjukkan pola yang tidak biasa, meskipun secara individu mungkin tidak dianggap outlier.</li>
-</ul>
-
-<br>
-<h1>Laporan UTS Penambangan Data</h1>
-<b>Tahapan Analisa</b>
-  <p>Proses analisa dimulai dengan menentukan tujuan dari proyek klasifikasi, yaitu untuk memprediksi status kesehatan pasien berdasarkan data yang tersedia dalam dataset. 
-  Pendekatan ini mengadopsi alur standar dalam data mining, mirip seperti yang telah dilakukan dalam tugas kelompok, yang mencakup tahapan pemahaman data, pemrosesan awal, pemodelan, evaluasi, dan penyajian hasil. 
-  Dataset yang digunakan berasal dari sumber terbuka dan telah disesuaikan dengan kebutuhan analisis. Setiap tahapan dilakukan secara sistematis untuk memastikan hasil akhir yang akurat dan dapat ditampilkan dalam bentuk yang mudah dipahami melalui web statis.</p>
-
-<b>Pemahaman Data (Data Understanding)</b
-  <p>Tahap pemahaman data dimulai dengan eksplorasi dataset, yang meliputi identifikasi fitur, tipe data, jumlah sampel, serta pemetaan nilai-nilai yang mungkin tidak lengkap atau tidak konsisten. 
-    Dalam hal ini, data yang digunakan adalah data medis pasien sirosis hati, dengan berbagai atribut seperti usia, jenis kelamin, tingkat bilirubin, kadar albumin, dan status hidup atau meninggal. 
-    Analisis statistik sederhana seperti mean, standar deviasi, dan distribusi kelas target juga dilakukan untuk memahami karakteristik data.</p>
-
-<b>Pemrosesan Awal Data (Preprocessing)</b>
-<p>Pada tahap preprocessing, dilakukan pembersihan data dari nilai yang hilang dan outlier, serta transformasi nilai jika diperlukan. Beberapa fitur numerik dinormalisasi untuk memastikan kesetaraan skala dalam proses pemodelan, khususnya untuk algoritma berbasis jarak seperti K-Nearest Neighbors (KNN). 
-  Selain itu, dilakukan juga encoding pada fitur kategorikal agar dapat digunakan dalam proses klasifikasi. Dataset kemudian dibagi menjadi data latih dan data uji untuk proses pelatihan dan evaluasi model.</p>
-
-<b>Pemodelan (Model Klasifikasi - KNN)</b>
-<p>Tahap selanjutnya adalah membangun model klasifikasi menggunakan algoritma K-Nearest Neighbors (KNN). KNN dipilih karena kesederhanaannya dan kemampuannya untuk memberikan hasil klasifikasi yang baik pada data dengan distribusi yang tidak terlalu kompleks. 
-  Model dilatih dengan data latih, dan nilai k terbaik ditentukan melalui validasi silang atau pengujian nilai k secara iteratif. Hasil klasifikasi dari model ini kemudian diuji menggunakan data uji untuk mengukur performanya.</p>
-
-<b>Evaluasi</b>
-<p>Evaluasi model dilakukan dengan menggunakan metrik seperti akurasi, precision, recall, dan F1-score. Confusion matrix juga digunakan untuk melihat distribusi prediksi terhadap nilai aktual. 
-  Dari hasil evaluasi ini dapat disimpulkan apakah model sudah cukup baik atau perlu dilakukan perbaikan, seperti tuning parameter k atau melakukan pemilihan fitur lebih lanjut. 
-  Model dengan performa terbaik kemudian dipilih sebagai model akhir untuk ditampilkan.</p>
-
-    <iframe src="UTS_Vidi.html" width="100%" height="800px" style="border:none;"></iframe>
-
-<div class="toctree-wrapper compound">
-<ul>
-
-</ul>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -597,11 +445,20 @@ Jenis:
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="k-mean.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">K-Mean</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="markdown.html"
+       href="notebooks.html"
        title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle"></p>
+        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
@@ -612,6 +469,24 @@ Jenis:
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
