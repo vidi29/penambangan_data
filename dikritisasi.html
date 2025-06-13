@@ -417,7 +417,7 @@ document.write(`
   Metode ini memiliki efek menghaluskan (smoothing) pada data masukan dan juga dapat mengurangi risiko overfitting terutama pada kasus dataset yang kecil. 
   Ada beberapa metode di data mining (data mining methods) yang memerlukan diskritisasi (discretization) sebelumnya diantaranya adalah</p>
 
-<h2>1. Naive Bayes Classifier</h2>
+<b>1. Naive Bayes Classifier</b>
 <p><strong>Mengapa butuh diskritisasi?</strong></p>
 <ul>
   <li>Naive Bayes versi kategorikal (Categorical Naive Bayes) bekerja dengan variabel kategoris atau diskrit.</li>
@@ -425,7 +425,7 @@ document.write(`
   <li>Diskritisasi kadang tetap dilakukan untuk menghindari asumsi distribusi tersebut.</li>
 </ul>
 
-<h2>Decision Tree (ID3, C4.5)</h2>
+<b>Decision Tree (ID3, C4.5)</b>
 <p><strong>Mengapa butuh diskritisasi?</strong></p>
 <ul>
   <li>ID3 hanya menerima atribut kategoris, sehingga diskritisasi diperlukan.</li>
@@ -439,6 +439,53 @@ document.write(`
   <li><strong>Analisis yang Lebih Baik:</strong> Mempermudah analisis dan visualisasi data.</li>
   <li><strong>Feature Engineering:</strong> Variabel hasil binning bisa lebih intuitif dan bermanfaat dalam pemodelan prediktif.</li>
 </ul>
+
+<b>Macam-Macam Teknik Binning</b>
+
+<b>1. Equal-Width Binning</b>
+<p>Setiap bin memiliki <strong>lebar yang sama</strong>, diperoleh dengan membagi rentang data menjadi <code>k</code> interval.</p>
+<b>Langkah-langkah:</b>
+<ul>
+  <li>Langkah 1: Cari nilai minimum dan maksimum dari data</li>
+  <li>Langkah 2: Hitung lebar bin (<code>w</code>) dengan rumus: <br>
+    <code>w = (max - min) / k</code></li>
+  <li>Langkah 3: Tentukan batas-batas bin berdasarkan <code>w</code></li>
+  <li>Langkah 4: Masukkan setiap data ke dalam bin sesuai intervalnya</li>
+</ul>
+<strong>Kelebihan:</strong>
+  <ul>
+    <li>Mudah diimplementasikan dan dipahami</li>
+  </ul>
+<<strong>Kekurangan:</strong>
+  <ul>
+    <li>Dapat menghasilkan bin dengan jumlah data yang sangat tidak merata (tidak seimbang)</li>
+  </ul>
+
+<b>2. Equal-Frequency Binning</b>
+<p>Teknik ini membagi data numerik ke dalam <strong>jumlah bin dengan frekuensi yang sama</strong>, berdasarkan <em>Fungsi Distribusi Kumulatif (CDF)</em>.</p>
+
+<b>Konsep Dasar:</b>
+<ul>
+  <li><strong>CDF (Cumulative Distribution Function):</strong> Memberikan probabilitas bahwa suatu nilai kurang dari atau sama dengan nilai tertentu.</li>
+  <li>Gunakan kuantil dari CDF untuk menentukan batas antar-bin (misalnya: 0.25, 0.50, 0.75 untuk 4 bin).</li>
+</ul>
+
+<b>Langkah-langkah Algoritma:</b>
+<ul>
+  <li>Urutkan data secara <strong>ascending</strong></li>
+  <li>Hitung posisi kuantil berdasarkan jumlah data</li>
+  <li>Ambil nilai kuantil untuk menentukan batas antar-bin</li>
+  <li>Kelompokkan data ke dalam bin berdasarkan kuantil tersebut</li>
+</ul>
+
+<strong>Kelebihan:</strong>
+  <ul>
+    <li>Setiap bin memiliki jumlah data yang hampir sama (merata)</li>
+  </ul>
+<strong>Kekurangan:</strong>
+  <ul>
+    <li>Batas interval bisa tidak konsisten (jarak antar bin bisa tidak sama)</li>
+  </ul>
 
 </section>
 
