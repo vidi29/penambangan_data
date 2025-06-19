@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 
@@ -8,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fuzzy C-Mean</title>
+    <title>Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur &#8212; Vidi Pratama Adityas Mauladani</title>
   
   
   
@@ -28,7 +29,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -57,21 +58,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
-    <script>
-    MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
-    };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-
+    <script>DOCUMENTATION_OPTIONS.pagename = 'PRA-UAS';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="prev" title="Perbandingan model Klasifikasi Naive Bayes dan Decision Tree" href="Perbandingan%20model%20Klasifikasi%20Naive%20Bayes%20dan%20Decision%20Tree.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,8 +153,8 @@
       
     
     
-    <img src="_static/logovidi.png" class="logo__image only-light" alt="vidi Pratama Adityas Maualadani/>
-    <script>document.write(`<img src="_static/logovidi.png" class="logo__image only-dark" alt="vidi Pratama Adityas Maualadani"/>`);</script>
+    <img src="_static/logovidi.png" class="logo__image only-light" alt="Logo"/>
+    <script>document.write(`<img src="_static/logovidi.png" class="logo__image only-dark" alt="Logo"/>`);</script>
   
   
 </a></div>
@@ -192,13 +182,15 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="knn.html">KNN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lof.html">LOF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="naive bayes.html">Naive Bayes</a></li>
+<li class="toctree-l1 current active"><a class="reference internal" href="naive bayes.html">Naive Bayes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UTS_Vidi.html">UTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="k-mean.html">K-Mean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fuzzy c-mean.html">Fuzzy C-Mean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="decision tree.html">Decision Tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dikritisasi.html">Dikritisasi</a></li>
-<li class="toctree-l1 current active"><a class="reference internal" href="Pra_UAS.html">Pra UAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prauas.html">Pra UAS</a></li>
+
+
 </ul>
 
     </div>
@@ -253,7 +245,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/rendydevanodanendra/pendataD" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -270,7 +262,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/rendydevanodanendra/pendataD/issues/new?title=Issue%20on%20page%20%2FPRA-UAS.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +292,7 @@
       
       
       
-      <li><a href="_sources/markdown.md" target="_blank"
+      <li><a href="_sources/PRA-UAS.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -310,7 +302,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -384,7 +376,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown Files</h1>
+    <h1>Pra UAS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,11 +386,73 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<ul class="toc">
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#">Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-understanding">Data Understanding</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#dataset">Dataset</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#tujuan">Tujuan</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#integrasi-data">Integrasi Data</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a>
+        <ul class="visible nav section-nav flex-column">
+          <li class="toc-h3 nav-item toc-entry">
+            <a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a>
+          </li>
+        </ul>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#fitur-label">Penjelasan Fitur dan Label Dataset</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifikasi-kualitas-dataset">Identifikasi Kualitas Dataset</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing-data">Preprocessing Data</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeling">Modeling</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#decision-tree">Decision Tree</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#svm-support-vector-machine">SVM (Support Vector Machine)</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a>
+      </li>
+    </ul>
+  </li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -409,104 +463,910 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
+  <section class="tex2jax_ignore mathjax_ignore" id="Evaluasi-Model-Klasifikasi-untuk-Prediksi-Kualitas-Anggur">
+<h1>Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur<a class="headerlink" href="#Evaluasi-Model-Klasifikasi-untuk-Prediksi-Kualitas-Anggur" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pendahuluan">
+<h2>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<p>Kualitas anggur merupakan salah satu faktor penting dalam industri makanan dan minuman, khususnya dalam produksi wine. 
+Penilaian kualitas anggur biasanya dilakukan oleh para ahli dengan menggunakan metode sensorik yang bersifat subjektif dan membutuhkan waktu serta biaya yang tidak sedikit. 
+Oleh karena itu, pendekatan berbasis data dan teknologi machine learning menjadi solusi alternatif yang menjanjikan untuk memprediksi kualitas anggur secara otomatis dan objektif.</p>
 
-    <H1>Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</H1>
-    <h2>Pendahuluan</h2>
+<p>Dalam penelitian ini, dilakukan evaluasi terhadap beberapa model klasifikasi untuk memprediksi kualitas anggur berdasarkan fitur-fitur kimia yang terdapat dalam dataset Wine Quality. 
+Dataset ini berisi berbagai parameter seperti keasaman, kadar gula, alkohol, dan lainnya yang diperoleh dari sampel anggur merah dan putih. 
+Tujuannya adalah untuk mengetahui sejauh mana model klasifikasi dapat membedakan tingkat kualitas anggur secara akurat.</p>
 
-    <p>Kualitas anggur merupakan salah satu faktor penting dalam industri makanan dan minuman, khususnya dalam produksi wine. 
-    Penilaian kualitas anggur biasanya dilakukan oleh para ahli dengan menggunakan metode sensorik yang bersifat subjektif dan membutuhkan waktu serta biaya yang tidak sedikit. 
-    Oleh karena itu, pendekatan berbasis data dan teknologi machine learning menjadi solusi alternatif yang menjanjikan untuk memprediksi kualitas anggur secara otomatis dan objektif.</p>
-
-    <p>Dalam penelitian ini, dilakukan evaluasi terhadap beberapa model klasifikasi untuk memprediksi kualitas anggur berdasarkan fitur-fitur kimia yang terdapat dalam dataset Wine Quality. 
-    Dataset ini berisi berbagai parameter seperti keasaman, kadar gula, alkohol, dan lainnya yang diperoleh dari sampel anggur merah dan putih. 
-    Tujuannya adalah untuk mengetahui sejauh mana model klasifikasi dapat membedakan tingkat kualitas anggur secara akurat.</p>
-
-    <p>Melalui evaluasi ini, diharapkan dapat ditemukan model yang paling optimal dalam memprediksi kualitas anggur serta memahami faktor-faktor apa saja yang paling memengaruhi hasil prediksi. 
-    Dengan demikian, pendekatan ini dapat memberikan kontribusi positif dalam mendukung pengambilan keputusan di bidang produksi dan pengolahan anggur.</p>
-
-    <h2>Data Understanding</h2>
-    <h2>Dataset</h2>
-    <p>
-        Dataset yang digunakan adalah <strong>Wine Quality Dataset</strong> yang tersedia di UCI Machine Learning Repository.
-        Dataset ini berisi data hasil uji kimia dari sampel anggur merah dan putih yang telah dinilai kualitasnya oleh para ahli.
-    </p>
-    <p>
-        Link dataset: <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" target="_blank">
-        https://archive.ics.uci.edu/ml/datasets/Wine+Quality</a><br>
-        Jumlah data: 6497 baris data<br>
-        Jumlah fitur: 12 fitur input + 1 label output (quality)<br>
-        Dua file utama: <em>winequality-red.csv</em> dan <em>winequality-white.csv</em>
-    </p>
-
-    <h2>Tujuan</h2>
+<p>Melalui evaluasi ini, diharapkan dapat ditemukan model yang paling optimal dalam memprediksi kualitas anggur serta memahami faktor-faktor apa saja yang paling memengaruhi hasil prediksi. 
+Dengan demikian, pendekatan ini dapat memberikan kontribusi positif dalam mendukung pengambilan keputusan di bidang produksi dan pengolahan anggur.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h2>Data Understanding</h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dataset"></section>
+<h2>Dataset</h2>
+<p>
+    Dataset yang digunakan adalah <strong>Wine Quality Dataset</strong> yang tersedia di UCI Machine Learning Repository.
+    Dataset ini berisi data hasil uji kimia dari sampel anggur merah dan putih yang telah dinilai kualitasnya oleh para ahli.
+</p>
+<p>
+    Link dataset: <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" target="_blank">
+    https://archive.ics.uci.edu/ml/datasets/Wine+Quality</a><br>
+    Jumlah data: 6497 baris data<br>
+    Jumlah fitur: 12 fitur input + 1 label output (quality)<br>
+    Dua file utama: <em>winequality-red.csv</em> dan <em>winequality-white.csv</em>
+</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tujuan"></section>
+<h2>Tujuan</h2>
     <ul>
         <li>Memprediksi kualitas anggur berdasarkan fitur-fitur kimia.</li>
         <li>Membandingkan performa beberapa model klasifikasi.</li>
         <li>Mengetahui fitur yang paling memengaruhi kualitas anggur.</li>
         <li>Menilai akurasi dan performa model menggunakan metrik evaluasi.</li>
     </ul>
+    
+</section>
 
-    <h2>Integrasi Data</h2>
-    <p>
-        Data dari dua file CSV (anggur merah dan putih) digabungkan menjadi satu. Ditambahkan kolom <code>type</code> 
-        untuk membedakan jenis anggur. Penggabungan dilakukan menggunakan pustaka <code>pandas</code>.
-    </p>
-    <b>Instalasi Paket</b>
-    <p>Untuk mengakses dataset dari UCI menggunakan Python, kamu bisa menginstal library berikut:</p>
-    <pre><code>pip install ucimlrepo</code></pre>
+<section class="tex2jax_ignore mathjax_ignore" id="integrasi-data">
+<h1>Integrasi Data<a class="headerlink" href="#integrasi-data" title="Link to this heading">#</a></h1>
+<p>Untuk dapat mengolah data, terlebih dahulu perlu dilakukan instalasi paket yang disediakan oleh UCI Dataset. Proses instalasi ini bertujuan agar data dari UCI dapat diakses dan diambil secara langsung melalui kode Python. 
+  Perintah untuk mengambil dataset dari UCI biasanya dapat ditemukan dengan menekan tombol "Import in Python" pada halaman dataset yang diinginkan, lalu mengikuti instruksi yang tersedia. 
+  Dengan begitu, data dari UCI dapat diunduh dan langsung digunakan dalam proses analisis atau pemodelan.</p>
+<p><img alt="image.png" src="attachment:image.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ucimlrepo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ucimlrepo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading ucimlrepo-0.0.7-py3-none-any.whl.metadata (5.5 kB)
+Requirement already satisfied: pandas&gt;=1.0.0 in /opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages (from ucimlrepo) (2.3.0)
+Requirement already satisfied: certifi&gt;=2020.12.5 in /opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages (from ucimlrepo) (2025.6.15)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.22.4 in /opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.2.6)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2025.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages (from pandas&gt;=1.0.0-&gt;ucimlrepo) (2025.2)
+Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.0.0-&gt;ucimlrepo) (1.17.0)
+Downloading ucimlrepo-0.0.7-py3-none-any.whl (8.0 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: ucimlrepo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed ucimlrepo-0.0.7
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ucimlrepo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_ucirepo</span> 
+  
+<span class="c1"># fetch dataset </span>
+<span class="n">wine_quality</span> <span class="o">=</span> <span class="n">fetch_ucirepo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">186</span><span class="p">)</span> 
+  
+<span class="c1"># data (as pandas dataframes) </span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">wine_quality</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">features</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">wine_quality</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">targets</span> 
+  
+<span class="c1"># metadata </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wine_quality</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span> 
+  
+<span class="c1"># variable information </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wine_quality</span><span class="o">.</span><span class="n">variables</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;uci_id&#39;: 186, &#39;name&#39;: &#39;Wine Quality&#39;, &#39;repository_url&#39;: &#39;https://archive.ics.uci.edu/dataset/186/wine+quality&#39;, &#39;data_url&#39;: &#39;https://archive.ics.uci.edu/static/public/186/data.csv&#39;, &#39;abstract&#39;: &#39;Two datasets are included, related to red and white vinho verde wine samples, from the north of Portugal. The goal is to model wine quality based on physicochemical tests (see [Cortez et al., 2009], http://www3.dsi.uminho.pt/pcortez/wine/).&#39;, &#39;area&#39;: &#39;Business&#39;, &#39;tasks&#39;: [&#39;Classification&#39;, &#39;Regression&#39;], &#39;characteristics&#39;: [&#39;Multivariate&#39;], &#39;num_instances&#39;: 4898, &#39;num_features&#39;: 11, &#39;feature_types&#39;: [&#39;Real&#39;], &#39;demographics&#39;: [], &#39;target_col&#39;: [&#39;quality&#39;], &#39;index_col&#39;: None, &#39;has_missing_values&#39;: &#39;no&#39;, &#39;missing_values_symbol&#39;: None, &#39;year_of_dataset_creation&#39;: 2009, &#39;last_updated&#39;: &#39;Wed Nov 15 2023&#39;, &#39;dataset_doi&#39;: &#39;10.24432/C56S3T&#39;, &#39;creators&#39;: [&#39;Paulo Cortez&#39;, &#39;A. Cerdeira&#39;, &#39;F. Almeida&#39;, &#39;T. Matos&#39;, &#39;J. Reis&#39;], &#39;intro_paper&#39;: {&#39;ID&#39;: 252, &#39;type&#39;: &#39;NATIVE&#39;, &#39;title&#39;: &#39;Modeling wine preferences by data mining from physicochemical properties&#39;, &#39;authors&#39;: &#39;P. Cortez, A. Cerdeira, Fernando Almeida, Telmo Matos, J. Reis&#39;, &#39;venue&#39;: &#39;Decision Support Systems&#39;, &#39;year&#39;: 2009, &#39;journal&#39;: None, &#39;DOI&#39;: None, &#39;URL&#39;: &#39;https://www.semanticscholar.org/paper/Modeling-wine-preferences-by-data-mining-from-Cortez-Cerdeira/bf15a0ccc14ac1deb5cea570c870389c16be019c&#39;, &#39;sha&#39;: None, &#39;corpus&#39;: None, &#39;arxiv&#39;: None, &#39;mag&#39;: None, &#39;acl&#39;: None, &#39;pmid&#39;: None, &#39;pmcid&#39;: None}, &#39;additional_info&#39;: {&#39;summary&#39;: &#39;The two datasets are related to red and white variants of the Portuguese &quot;Vinho Verde&quot; wine. For more details, consult: http://www.vinhoverde.pt/en/ or the reference [Cortez et al., 2009].  Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables are available (e.g. there is no data about grape types, wine brand, wine selling price, etc.).\n\nThese datasets can be viewed as classification or regression tasks.  The classes are ordered and not balanced (e.g. there are many more normal wines than excellent or poor ones). Outlier detection algorithms could be used to detect the few excellent or poor wines. Also, we are not sure if all input variables are relevant. So it could be interesting to test feature selection methods.\n&#39;, &#39;purpose&#39;: None, &#39;funded_by&#39;: None, &#39;instances_represent&#39;: None, &#39;recommended_data_splits&#39;: None, &#39;sensitive_data&#39;: None, &#39;preprocessing_description&#39;: None, &#39;variable_info&#39;: &#39;For more information, read [Cortez et al., 2009].\r\nInput variables (based on physicochemical tests):\r\n   1 - fixed acidity\r\n   2 - volatile acidity\r\n   3 - citric acid\r\n   4 - residual sugar\r\n   5 - chlorides\r\n   6 - free sulfur dioxide\r\n   7 - total sulfur dioxide\r\n   8 - density\r\n   9 - pH\r\n   10 - sulphates\r\n   11 - alcohol\r\nOutput variable (based on sensory data): \r\n   12 - quality (score between 0 and 10)&#39;, &#39;citation&#39;: None}}
+                    name     role         type demographic  \
+0          fixed_acidity  Feature   Continuous        None   
+1       volatile_acidity  Feature   Continuous        None   
+2            citric_acid  Feature   Continuous        None   
+3         residual_sugar  Feature   Continuous        None   
+4              chlorides  Feature   Continuous        None   
+5    free_sulfur_dioxide  Feature   Continuous        None   
+6   total_sulfur_dioxide  Feature   Continuous        None   
+7                density  Feature   Continuous        None   
+8                     pH  Feature   Continuous        None   
+9              sulphates  Feature   Continuous        None   
+10               alcohol  Feature   Continuous        None   
+11               quality   Target      Integer        None   
+12                 color    Other  Categorical        None   
 
-    <h2>Eksplorasi Data</h2>
-    <p>Eksplorasi dilakukan untuk memahami pola, distribusi, dan hubungan antar fitur. Beberapa hal yang dilakukan:</p>
-    <ul>
-        <li>Melihat statistik deskriptif dengan <code>.describe()</code></li>
-        <li>Distribusi label kualitas anggur</li>
-        <li>Visualisasi heatmap korelasi</li>
-        <li>Boxplot untuk deteksi outlier</li>
-    </ul>
+               description units missing_values  
+0                     None  None             no  
+1                     None  None             no  
+2                     None  None             no  
+3                     None  None             no  
+4                     None  None             no  
+5                     None  None             no  
+6                     None  None             no  
+7                     None  None             no  
+8                     None  None             no  
+9                     None  None             no  
+10                    None  None             no  
+11  score between 0 and 10  None             no  
+12            red or white  None             no  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="eksplorasi-data">
+<h1>Eksplorasi Data<a class="headerlink" href="#eksplorasi-data" title="Link to this heading">#</a></h1>
+<section id="visualisasi-data">
+<h2>Visualisasi Data<a class="headerlink" href="#visualisasi-data" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-    <h2>Struktur Dataset</h2>
-    <table border="1" cellpadding="5" cellspacing="0">
-        <thead>
-        <tr>
-            <th>No</th>
-            <th>Nama Kolom</th>
-            <th>Deskripsi</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr><td>1</td><td>fixed acidity</td><td>Keasaman tetap (g/dm³)</td></tr>
-        <tr><td>2</td><td>volatile acidity</td><td>Keasaman mudah menguap (g/dm³)</td></tr>
-        <tr><td>3</td><td>citric acid</td><td>Asam sitrat (g/dm³)</td></tr>
-        <tr><td>4</td><td>residual sugar</td><td>Gula sisa (g/dm³)</td></tr>
-        <tr><td>5</td><td>chlorides</td><td>Kadar klorida (g/dm³)</td></tr>
-        <tr><td>6</td><td>free sulfur dioxide</td><td>SO2 bebas (mg/dm³)</td></tr>
-        <tr><td>7</td><td>total sulfur dioxide</td><td>Total SO2 (mg/dm³)</td></tr>
-        <tr><td>8</td><td>density</td><td>Kepadatan (g/cm³)</td></tr>
-        <tr><td>9</td><td>pH</td><td>Tingkat keasaman</td></tr>
-        <tr><td>10</td><td>sulphates</td><td>Sulfat (g/dm³)</td></tr>
-        <tr><td>11</td><td>alcohol</td><td>Persentase alkohol (%)</td></tr>
-        <tr><td>12</td><td>quality</td><td>Nilai kualitas (0–10)</td></tr>
-        <tr><td>13</td><td>type</td><td>Jenis anggur (red/white)</td></tr>
-        </tbody>
-    </table>
+<span class="c1"># Gabungkan fitur dan target</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-    <h2>Identifikasi Kualitas Dataset</h2>
-    <ul>
-        <li><strong>Kelengkapan:</strong> Tidak ada missing value.</li>
-        <li><strong>Distribusi tidak seimbang:</strong> Mayoritas anggur memiliki kualitas 5–7.</li>
-        <li><strong>Skala bervariasi:</strong> Perlu normalisasi untuk beberapa fitur.</li>
-        <li><strong>Outlier:</strong> Ditemukan pada beberapa fitur seperti volatile acidity.</li>
-        <li><strong>Korelasi:</strong> Fitur free sulfur dioxide dan total sulfur dioxide memiliki korelasi tinggi.</li>
-    </ul>
+<span class="c1"># Tampilkan 5 baris pertama</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fixed_acidity</th>
+      <th>volatile_acidity</th>
+      <th>citric_acid</th>
+      <th>residual_sugar</th>
+      <th>chlorides</th>
+      <th>free_sulfur_dioxide</th>
+      <th>total_sulfur_dioxide</th>
+      <th>density</th>
+      <th>pH</th>
+      <th>sulphates</th>
+      <th>alcohol</th>
+      <th>quality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>7.4</td>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>1.9</td>
+      <td>0.076</td>
+      <td>11.0</td>
+      <td>34.0</td>
+      <td>0.99780</td>
+      <td>3.51</td>
+      <td>0.56</td>
+      <td>9.4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7.8</td>
+      <td>0.88</td>
+      <td>0.00</td>
+      <td>2.6</td>
+      <td>0.098</td>
+      <td>25.0</td>
+      <td>67.0</td>
+      <td>0.99680</td>
+      <td>3.20</td>
+      <td>0.68</td>
+      <td>9.8</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7.8</td>
+      <td>0.76</td>
+      <td>0.04</td>
+      <td>2.3</td>
+      <td>0.092</td>
+      <td>15.0</td>
+      <td>54.0</td>
+      <td>0.99700</td>
+      <td>3.26</td>
+      <td>0.65</td>
+      <td>9.8</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11.2</td>
+      <td>0.28</td>
+      <td>0.56</td>
+      <td>1.9</td>
+      <td>0.075</td>
+      <td>17.0</td>
+      <td>60.0</td>
+      <td>0.99800</td>
+      <td>3.16</td>
+      <td>0.58</td>
+      <td>9.8</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7.4</td>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>1.9</td>
+      <td>0.076</td>
+      <td>11.0</td>
+      <td>34.0</td>
+      <td>0.99780</td>
+      <td>3.51</td>
+      <td>0.56</td>
+      <td>9.4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>6492</th>
+      <td>6.2</td>
+      <td>0.21</td>
+      <td>0.29</td>
+      <td>1.6</td>
+      <td>0.039</td>
+      <td>24.0</td>
+      <td>92.0</td>
+      <td>0.99114</td>
+      <td>3.27</td>
+      <td>0.50</td>
+      <td>11.2</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>6493</th>
+      <td>6.6</td>
+      <td>0.32</td>
+      <td>0.36</td>
+      <td>8.0</td>
+      <td>0.047</td>
+      <td>57.0</td>
+      <td>168.0</td>
+      <td>0.99490</td>
+      <td>3.15</td>
+      <td>0.46</td>
+      <td>9.6</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>6494</th>
+      <td>6.5</td>
+      <td>0.24</td>
+      <td>0.19</td>
+      <td>1.2</td>
+      <td>0.041</td>
+      <td>30.0</td>
+      <td>111.0</td>
+      <td>0.99254</td>
+      <td>2.99</td>
+      <td>0.46</td>
+      <td>9.4</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>6495</th>
+      <td>5.5</td>
+      <td>0.29</td>
+      <td>0.30</td>
+      <td>1.1</td>
+      <td>0.022</td>
+      <td>20.0</td>
+      <td>110.0</td>
+      <td>0.98869</td>
+      <td>3.34</td>
+      <td>0.38</td>
+      <td>12.8</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>6496</th>
+      <td>6.0</td>
+      <td>0.21</td>
+      <td>0.38</td>
+      <td>0.8</td>
+      <td>0.020</td>
+      <td>22.0</td>
+      <td>98.0</td>
+      <td>0.98941</td>
+      <td>3.26</td>
+      <td>0.32</td>
+      <td>11.8</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+<p>6497 rows × 12 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">layout</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Distribusi Fitur Wine&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f6d5bc49dca177e4520a03b710d61417ecc3e07b47a5d5f36cd020072c6bb16b.png" src="_images/f6d5bc49dca177e4520a03b710d61417ecc3e07b47a5d5f36cd020072c6bb16b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;quality&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribusi Kualitas Wine&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Skor Kualitas&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Jumlah Sampel&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0ed205f7f0778cab3377153d9afdc85da7d71a0dc39c7e47a45f650a18246da0.png" src="_images/0ed205f7f0778cab3377153d9afdc85da7d71a0dc39c7e47a45f650a18246da0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ucimlrepo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_ucirepo</span>
 
+<span class="c1"># Ambil dataset Wine Quality</span>
+<span class="n">wine_quality</span> <span class="o">=</span> <span class="n">fetch_ucirepo</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">186</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">wine_quality</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">features</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">wine_quality</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">targets</span>
 
-    <a href="https://colab.research.google.com/github/vidi29/penambangan_data/blob/main/dikritisasi.ipynb" target="_blank" class="button">
-    Buka di Google Colab
-    </a>
+<span class="c1"># Gabungkan data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
+<span class="c1"># Hitung jumlah data per kelas</span>
+<span class="n">class_counts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+
+<span class="c1"># Tampilkan dalam bentuk tabel</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribusi Label:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">class_counts</span><span class="p">)</span>
+
+<span class="c1"># Visualisasi</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">class_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">class_counts</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribusi Label &#39;quality&#39; dalam Dataset Wine&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Skor Kualitas (quality)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Jumlah Sampel&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Distribusi Label:
+quality
+3      30
+4     216
+5    2138
+6    2836
+7    1079
+8     193
+9       5
+Name: count, dtype: int64
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2431/812968063.py:23: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `x` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(x=class_counts.index, y=class_counts.values, palette=&quot;magma&quot;)
+</pre></div>
+</div>
+<img alt="_images/13659b7b4b4d2b2242e2d15d73b7655cdd131b7e2a3170684ba05e1ace062d0e.png" src="_images/13659b7b4b4d2b2242e2d15d73b7655cdd131b7e2a3170684ba05e1ace062d0e.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="struktur-dataset">
+<h1>Struktur Dataset<a class="headerlink" href="#struktur-dataset" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span> <span class="c1">#untuk mengetahui bentuk dataset(baris &amp; kolom)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6497, 12)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Terdapat 6497 Baris dan 12 Kolom</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="c1">#untuk mengetahui kolom-kolom yang ada pada dataset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;fixed_acidity&#39;, &#39;volatile_acidity&#39;, &#39;citric_acid&#39;, &#39;residual_sugar&#39;,
+       &#39;chlorides&#39;, &#39;free_sulfur_dioxide&#39;, &#39;total_sulfur_dioxide&#39;, &#39;density&#39;,
+       &#39;pH&#39;, &#39;sulphates&#39;, &#39;alcohol&#39;, &#39;quality&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+
+<section class="tex2jax_ignore mathjax_ignore" id="fitur-label">
+<h1>Penjelasan Fitur dan Label Dataset<a class="headerlink" href="#fitur-label" title="Link to this heading">#</a></h1>
+
+<p><strong>Fitur</strong> adalah atribut atau variabel independen dalam dataset yang digunakan untuk membuat prediksi.</p>
+
+<p>Terdapat 12 fitur pada dataset ini:</p>
+<ul>
+  <li><strong>fixed_acidity</strong> &rarr; Kandungan asam tetap (contoh: tartaric acid) dalam wine.</li>
+  <li><strong>volatile_acidity</strong> &rarr; Kandungan asam mudah menguap (contoh: acetic acid), tinggi = bau cuka.</li>
+  <li><strong>citric_acid</strong> &rarr; Asam sitrat, menambah kesegaran rasa wine.</li>
+  <li><strong>residual_sugar</strong> &rarr; Gula yang tersisa setelah fermentasi (g/L).</li>
+  <li><strong>chlorides</strong> &rarr; Kandungan garam (terutama sodium chloride).</li>
+  <li><strong>free_sulfur_dioxide</strong> &rarr; SO₂ bebas, mencegah pertumbuhan mikroba.</li>
+  <li><strong>total_sulfur_dioxide</strong> &rarr; Total SO₂, gabungan bebas + terikat.</li>
+  <li><strong>density</strong> &rarr; Kerapatan wine (terkait dengan gula dan alkohol).</li>
+  <li><strong>pH</strong> &rarr; Tingkat keasaman (pH rendah = lebih asam).</li>
+  <li><strong>sulphates</strong> &rarr; Senyawa belerang, membantu stabilisasi dan mencegah oksidasi.</li>
+  <li><strong>alcohol</strong> &rarr; Kandungan alkohol (% vol).</li>
+</ul>
+
+<p><strong>Label</strong> adalah variabel dependen atau target yang ingin diprediksi oleh model machine learning. Label merupakan output yang dipelajari oleh model dari data.</p>
+
+<ul>
+  <li><strong>quality</strong> &rarr; Skor kualitas wine (biasanya dari 3 sampai 9), berdasarkan penilaian sensorik.</li>
+</ul>
+
+<p><strong>Kolom tambahan:</strong></p>
+<ul>
+  <li><strong>color</strong> &rarr; Jenis wine: <em>red</em> atau <em>white</em>.</li>
+</ul>
+
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span> <span class="c1">#untuk mengetahui tipe data dari masing-masing kolom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fixed_acidity           float64
+volatile_acidity        float64
+citric_acid             float64
+residual_sugar          float64
+chlorides               float64
+free_sulfur_dioxide     float64
+total_sulfur_dioxide    float64
+density                 float64
+pH                      float64
+sulphates               float64
+alcohol                 float64
+quality                   int64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="tex2jax_ignore mathjax_ignore" id="identifikasi-kualitas-dataset">
+<h1>Identifikasi Kualitas Dataset<a class="headerlink" href="#identifikasi-kualitas-dataset" title="Link to this heading">#</a></h1>
+
+<section id="deteksi-missing-value">
+<h2>Deteksi Missing Value<a class="headerlink" href="#deteksi-missing-value" title="Link to this heading">#</a></h2>
+
+<p>Missing value atau data yang hilang merupakan salah satu permasalahan umum dalam pengolahan dataset. Data yang hilang dapat terjadi karena berbagai alasan, di antaranya:</p>
+<ul class="simple">
+  <li><p><strong>Human error oleh pewawancara</strong>: Terjadi akibat kelalaian petugas dalam mencatat jawaban responden, misalnya pertanyaan yang terlewat.</p></li>
+  <li><p><strong>Ketidakmampuan responden</strong>: Responden tidak dapat memberikan jawaban yang akurat karena kurang memahami pertanyaan atau mengalami kelelahan (respondent fatigue), sehingga ada bagian yang tidak diisi.</p></li>
+  <li><p><strong>Ketidaksediaan responden</strong>: Responden sengaja tidak menjawab karena pertanyaannya dianggap sensitif, seperti pendapatan, usia, atau pengalaman hukum.</p></li>
+</ul>
+
+<p>Beberapa cara yang umum dilakukan untuk menangani missing value antara lain:</p>
+<ul class="simple">
+  <li><p>Menghapus data yang mengandung nilai kosong.</p></li>
+  <li><p>Mengestimasi nilai berdasarkan parameter statistik.</p></li>
+  <li><p>Menggunakan teknik imputasi.</p></li>
+</ul>
+
+<p>Pada pembahasan kali ini, penanganan missing value dilakukan menggunakan metode imputasi. Dua metode imputasi yang digunakan adalah:</p>
+<ul class="simple">
+  <li><p><strong>Imputasi dengan Mean</strong>: Menggantikan nilai kosong dengan rata-rata dari kolom tersebut.</p></li>
+  <li><p><strong>Imputasi dengan KNN</strong>: Menggunakan algoritma K-Nearest Neighbors untuk memperkirakan nilai yang hilang berdasarkan kemiripan data lain.</p></li>
+</ul>
+
+<p>Langkah pertama yang dilakukan adalah mendeteksi keberadaan missing value di setiap kolom dalam dataset.</p>
+</section>
+</section>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deteksi missing value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># Visualisasi (opsional)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Peta Missing Value pada Dataset&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fixed_acidity           0
+volatile_acidity        0
+citric_acid             0
+residual_sugar          0
+chlorides               0
+free_sulfur_dioxide     0
+total_sulfur_dioxide    0
+density                 0
+pH                      0
+sulphates               0
+alcohol                 0
+quality                 0
+dtype: int64
+</pre></div>
+</div>
+<img alt="_images/adf98e2f432be3e57953be0f6ffa2967dccad58fb67729bbe74c2a2a6c9f7ee0.png" src="_images/adf98e2f432be3e57953be0f6ffa2967dccad58fb67729bbe74c2a2a6c9f7ee0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Detect rows with missing values</span>
+<span class="n">rows_with_missing</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="c1"># Tampilkan baris dengan nilai yang hilang beserta ID, fitur, dan labelnya</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows with Missing Values:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rows_with_missing</span><span class="p">)</span>
+
+<span class="c1"># Detect missing values</span>
+<span class="n">missing_values</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+
+<span class="c1"># Hitung nilai yang hilang di setiap kolom</span>
+<span class="n">missing_counts</span> <span class="o">=</span> <span class="n">missing_values</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># Display missing value counts</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing Value Counts:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">missing_counts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows with Missing Values:
+Empty DataFrame
+Columns: [fixed_acidity, volatile_acidity, citric_acid, residual_sugar, chlorides, free_sulfur_dioxide, total_sulfur_dioxide, density, pH, sulphates, alcohol, quality]
+Index: []
+Missing Value Counts:
+fixed_acidity           0
+volatile_acidity        0
+citric_acid             0
+residual_sugar          0
+chlorides               0
+free_sulfur_dioxide     0
+total_sulfur_dioxide    0
+density                 0
+pH                      0
+sulphates               0
+alcohol                 0
+quality                 0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tidak ada missing value</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="preprocessing-data">
+<h1>Preprocessing Data<a class="headerlink" href="#preprocessing-data" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="modeling">
+<h1>Modeling<a class="headerlink" href="#modeling" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Misal nama DataFrame-mu adalah `data`</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;quality&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;quality&#39;</span><span class="p">]</span>
+
+<span class="c1"># Split data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="c1"># Scaling (wajib untuk SVM dan Naive Bayes)</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="decision-tree">
+<h2>Decision Tree<a class="headerlink" href="#decision-tree" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="n">dt_model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">dt_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">dt_pred</span> <span class="o">=</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎯 Decision Tree&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">dt_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">dt_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🎯 Decision Tree
+[[  0   0   4   2   0   0   0]
+ [  1   5  17  14   6   0   0]
+ [  1  15 281 102  26   3   0]
+ [  1  12 102 359  79  14   0]
+ [  0   2  15  68 124   7   0]
+ [  0   0   0  11  11  16   1]
+ [  0   0   0   0   1   0   0]]
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         6
+           4       0.15      0.12      0.13        43
+           5       0.67      0.66      0.66       428
+           6       0.65      0.63      0.64       567
+           7       0.50      0.57      0.54       216
+           8       0.40      0.41      0.41        39
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.60      1300
+   macro avg       0.34      0.34      0.34      1300
+weighted avg       0.60      0.60      0.60      1300
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="model-2-svm-support-vector-machine">
+<h1>Model 2 SVM Support Vector Machine<a class="headerlink" href="#model-2-svm-support-vector-machine" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.svm</span><span class="w"> </span><span class="kn">import</span> <span class="n">SVC</span>
+
+<span class="n">svm_model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">&#39;rbf&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="s1">&#39;scale&#39;</span><span class="p">)</span>  <span class="c1"># Bisa dicoba linear juga</span>
+<span class="n">svm_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">svm_pred</span> <span class="o">=</span> <span class="n">svm_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎯 Support Vector Machine (SVM)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">svm_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">svm_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🎯 Support Vector Machine (SVM)
+[[  0   0   3   3   0   0   0]
+ [  0   0  26  17   0   0   0]
+ [  0   0 261 166   1   0   0]
+ [  0   0 111 426  30   0   0]
+ [  0   0   5 155  56   0   0]
+ [  0   0   0  24  15   0   0]
+ [  0   0   0   0   1   0   0]]
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         6
+           4       0.00      0.00      0.00        43
+           5       0.64      0.61      0.63       428
+           6       0.54      0.75      0.63       567
+           7       0.54      0.26      0.35       216
+           8       0.00      0.00      0.00        39
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.57      1300
+   macro avg       0.25      0.23      0.23      1300
+weighted avg       0.54      0.57      0.54      1300
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+/opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+/opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+</pre></div>
+</div>
+</div>
+</div>
+<section id="naive-bayes">
+<h2>Naive Bayes<a class="headerlink" href="#naive-bayes" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.naive_bayes</span><span class="w"> </span><span class="kn">import</span> <span class="n">GaussianNB</span>
+
+<span class="n">nb_model</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">nb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">nb_pred</span> <span class="o">=</span> <span class="n">nb_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;🎯 Naive Bayes&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">nb_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">nb_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🎯 Naive Bayes
+[[  2   1   2   0   1   0   0]
+ [  3   6  15  11   7   1   0]
+ [  8  13 205 164  37   1   0]
+ [  5   7 146 231 163  15   0]
+ [  2   0  16  67 108  23   0]
+ [  0   0   5  12  18   4   0]
+ [  0   0   0   0   1   0   0]]
+              precision    recall  f1-score   support
+
+           3       0.10      0.33      0.15         6
+           4       0.22      0.14      0.17        43
+           5       0.53      0.48      0.50       428
+           6       0.48      0.41      0.44       567
+           7       0.32      0.50      0.39       216
+           8       0.09      0.10      0.10        39
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.43      1300
+   macro avg       0.25      0.28      0.25      1300
+weighted avg       0.45      0.43      0.43      1300
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+/opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+/opt/hostedtoolcache/Python/3.10.18/x64/lib/python3.10/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># Akurasi masing-masing model</span>
+<span class="n">acc_dt</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">dt_pred</span><span class="p">)</span>
+<span class="n">acc_svm</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">svm_pred</span><span class="p">)</span>
+<span class="n">acc_nb</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">nb_pred</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan hasil evaluasi</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;📊 Akurasi Model:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decision Tree : </span><span class="si">{</span><span class="n">acc_dt</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SVM           : </span><span class="si">{</span><span class="n">acc_svm</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Naive Bayes   : </span><span class="si">{</span><span class="n">acc_nb</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📊 Akurasi Model:
+Decision Tree : 0.6038
+SVM           : 0.5715
+Naive Bayes   : 0.4277
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">akurasi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Model&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Decision Tree&#39;</span><span class="p">,</span> <span class="s1">&#39;SVM&#39;</span><span class="p">,</span> <span class="s1">&#39;Naive Bayes&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;Akurasi&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">acc_dt</span><span class="p">,</span> <span class="n">acc_svm</span><span class="p">,</span> <span class="n">acc_nb</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📈 Tabel Perbandingan Akurasi:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">akurasi_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📈 Tabel Perbandingan Akurasi:
+           Model   Akurasi
+0  Decision Tree  0.603846
+1            SVM  0.571538
+2    Naive Bayes  0.427692
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">akurasi_df</span><span class="p">[</span><span class="s1">&#39;Model&#39;</span><span class="p">],</span> <span class="n">akurasi_df</span><span class="p">[</span><span class="s1">&#39;Akurasi&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="s1">&#39;salmon&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Perbandingan Akurasi Model&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Akurasi&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/df0a365f57d6f46fd1d9022771ab58c3b0e42bfb88e484002a596dc70ed15a64.png" src="_images/df0a365f57d6f46fd1d9022771ab58c3b0e42bfb88e484002a596dc70ed15a64.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -540,22 +1400,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="k-mean.html"
+       href="dikritisasi.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">K-Mean</p>
+        <p class="prev-next-title">Dikritasi</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="notebooks.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -573,11 +1424,73 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<ul class="toc">
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#">Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-understanding">Data Understanding</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#dataset">Dataset</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#tujuan">Tujuan</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#integrasi-data">Integrasi Data</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a>
+        <ul class="visible nav section-nav flex-column">
+          <li class="toc-h3 nav-item toc-entry">
+            <a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a>
+          </li>
+        </ul>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#fitur-label">Penjelasan Fitur dan Label Dataset</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifikasi-kualitas-dataset">Identifikasi Kualitas Dataset</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing-data">Preprocessing Data</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeling">Modeling</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#decision-tree">Decision Tree</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#svm-support-vector-machine">SVM (Support Vector Machine)</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a>
+      </li>
+    </ul>
+  </li>
 </ul>
+
   </nav></div>
 
 </div></div>
@@ -591,7 +1504,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By Vidi Pratama Adityas Mauladani
+By Vidi Pratama Adityas Maualadani
 </p>
 
   </div>
@@ -601,7 +1514,7 @@ By Vidi Pratama Adityas Mauladani
 
   <p class="copyright">
     
-      © Copyright 2025.
+      © Copyright 2023.
       <br/>
     
   </p>
