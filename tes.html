@@ -438,18 +438,43 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="klasifikasi-kualitas-wine-menggunakan-teknik-data-mining">
-<h1>Klasifikasi Kualitas Wine Menggunakan Teknik Data Mining<a class="headerlink" href="#klasifikasi-kualitas-wine-menggunakan-teknik-data-mining" title="Link to this heading">#</a></h1>
+<h1>Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur<a class="headerlink" href="#klasifikasi-kualitas-wine-menggunakan-teknik-data-mining" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="pendahuluan">
-<h1>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h1>
-<p>Dataset Wine Quality yang diambil dari UCI Machine Learning Repository berisi informasi mengenai berbagai karakteristik kimia dan fisika dari dua jenis wine asal Portugal, yaitu red wine (anggur merah) dan white wine (anggur putih). Tujuan utama dari dataset ini adalah untuk memprediksi atau mengklasifikasikan kualitas wine berdasarkan atribut-atribut tersebut.</p>
-<p>Dataset ini sering digunakan dalam studi klasifikasi dan regresi, khususnya di bidang data mining dan machine learning, karena memiliki struktur yang bersih, cukup besar, dan fitur yang bermakna.</p>
+<h2>Pendahuluan<a class="headerlink" href="#pendahuluan" title="Link to this heading">#</a></h2>
+<p>Kualitas anggur merupakan salah satu faktor penting dalam industri makanan dan minuman, khususnya dalam produksi wine. 
+Penilaian kualitas anggur biasanya dilakukan oleh para ahli dengan menggunakan metode sensorik yang bersifat subjektif dan membutuhkan waktu serta biaya yang tidak sedikit. 
+Oleh karena itu, pendekatan berbasis data dan teknologi machine learning menjadi solusi alternatif yang menjanjikan untuk memprediksi kualitas anggur secara otomatis dan objektif.</p>
+
+<p>Dalam penelitian ini, dilakukan evaluasi terhadap beberapa model klasifikasi untuk memprediksi kualitas anggur berdasarkan fitur-fitur kimia yang terdapat dalam dataset Wine Quality. 
+Dataset ini berisi berbagai parameter seperti keasaman, kadar gula, alkohol, dan lainnya yang diperoleh dari sampel anggur merah dan putih. 
+Tujuannya adalah untuk mengetahui sejauh mana model klasifikasi dapat membedakan tingkat kualitas anggur secara akurat.</p>
+
+<p>Melalui evaluasi ini, diharapkan dapat ditemukan model yang paling optimal dalam memprediksi kualitas anggur serta memahami faktor-faktor apa saja yang paling memengaruhi hasil prediksi. 
+Dengan demikian, pendekatan ini dapat memberikan kontribusi positif dalam mendukung pengambilan keputusan di bidang produksi dan pengolahan anggur.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="sumber-data">
-<h1>Sumber Data<a class="headerlink" href="#sumber-data" title="Link to this heading">#</a></h1>
-<p>Datase diambil dari link dibawah ini</p>
-<p><a class="reference external" href="https://archive.ics.uci.edu/dataset/186/wine+quality">https://archive.ics.uci.edu/dataset/186/wine+quality</a></p>
-<p>Dua set data disertakan, terkait dengan sampel anggur vinho verde merah dan putih, dari Portugal utara. Tujuannya adalah untuk memodelkan kualitas anggur berdasarkan uji fisikokimia (lihat [Cortez et al., 2009], <a class="reference external" href="http://www3.dsi.uminho.pt/pcortez/wine/">http://www3.dsi.uminho.pt/pcortez/wine/</a>).</p>
+<h2>Data Understanding</h2>
+<h2>Dataset</h2>
+<p>
+    Dataset yang digunakan adalah <strong>Wine Quality Dataset</strong> yang tersedia di UCI Machine Learning Repository.
+    Dataset ini berisi data hasil uji kimia dari sampel anggur merah dan putih yang telah dinilai kualitasnya oleh para ahli.
+</p>
+<p>
+    Link dataset: <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" target="_blank">
+    https://archive.ics.uci.edu/ml/datasets/Wine+Quality</a><br>
+    Jumlah data: 6497 baris data<br>
+    Jumlah fitur: 12 fitur input + 1 label output (quality)<br>
+    Dua file utama: <em>winequality-red.csv</em> dan <em>winequality-white.csv</em>
+</p>
+<h2>Tujuan</h2>
+    <ul>
+        <li>Memprediksi kualitas anggur berdasarkan fitur-fitur kimia.</li>
+        <li>Membandingkan performa beberapa model klasifikasi.</li>
+        <li>Mengetahui fitur yang paling memengaruhi kualitas anggur.</li>
+        <li>Menilai akurasi dan performa model menggunakan metrik evaluasi.</li>
+    </ul>
+    
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="rincian-dataset">
 <h1>Rincian Dataset<a class="headerlink" href="#rincian-dataset" title="Link to this heading">#</a></h1>
