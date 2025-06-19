@@ -452,17 +452,9 @@ document.write(`
         Data dari dua file CSV (anggur merah dan putih) digabungkan menjadi satu. Ditambahkan kolom <code>type</code> 
         untuk membedakan jenis anggur. Penggabungan dilakukan menggunakan pustaka <code>pandas</code>.
     </p>
-    <pre><code>
-    import pandas as pd
-
-    red = pd.read_csv('winequality-red.csv')
-    white = pd.read_csv('winequality-white.csv')
-
-    red['type'] = 'red'
-    white['type'] = 'white'
-
-    data = pd.concat([red, white], ignore_index=True)
-    </code></pre>
+    <b>Instalasi Paket</b>
+    <p>Untuk mengakses dataset dari UCI menggunakan Python, kamu bisa menginstal library berikut:</p>
+    <pre><code>pip install ucimlrepo</code></pre>
 
     <h2>Eksplorasi Data</h2>
     <p>Eksplorasi dilakukan untuk memahami pola, distribusi, dan hubungan antar fitur. Beberapa hal yang dilakukan:</p>
