@@ -386,41 +386,71 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-Understanding">Data Understanding</a></li><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Dataset">Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan">Tujuan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-data">Integrasi Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset-kualitas-wine">Penjelasan Fitur dan Label Dataset</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-pengelompokan-label-kualitas-wine"><strong>Deskripsi Pengelompokan Label Kualitas Wine</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-yang-tidak-merata"><strong>1. Distribusi Data yang Tidak Merata</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyederhanaan-masalah-klasifikasi"><strong>2. Penyederhanaan Masalah Klasifikasi</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevansi-dengan-tujuan-nyata"><strong>3. Relevansi dengan Tujuan Nyata</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konsistensi-dengan-penelitian-terdahulu"><strong>4. Konsistensi dengan Penelitian Terdahulu</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-skema-pengelompokan-yang-umum-digunakan"><strong>Contoh Skema Pengelompokan yang Umum Digunakan</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-dataset">Identifikasi Kualitas Dataset</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a></li></ul>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-data">Preprocessing Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">Modeling</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">Decision Tree</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-2-svm-support-vector-machine">Model 2 SVM Support Vector Machine</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
-</ul>
-</li>
+<ul class="toc">
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#">Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-understanding">Data Understanding</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#dataset">Dataset</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#tujuan">Tujuan</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#integrasi-data">Integrasi Data</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a>
+        <ul class="visible nav section-nav flex-column">
+          <li class="toc-h3 nav-item toc-entry">
+            <a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a>
+          </li>
+        </ul>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#fitur-label">Penjelasan Fitur dan Label Dataset</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifikasi-kualitas-dataset">Identifikasi Kualitas Dataset</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing-data">Preprocessing Data</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeling">Modeling</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#decision-tree">Decision Tree</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#svm-support-vector-machine">SVM (Support Vector Machine)</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a>
+      </li>
+    </ul>
+  </li>
 </ul>
 
             </nav>
@@ -1393,45 +1423,71 @@ Naive Bayes   : 0.4277
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-Understanding">Data Understanding</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rincian-dataset">Rincian Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan">Tujuan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-data">Integrasi Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset-kualitas-wine">Deskripsi Dataset Kualitas Wine</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-data">Struktur Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabel-fitur">Variabel Fitur</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label-quality"><strong>Label: <code class="docutils literal notranslate"><span class="pre">quality</span></code></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi"><strong>Deskripsi</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-pengelompokan-label-kualitas-wine"><strong>Deskripsi Pengelompokan Label Kualitas Wine</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-yang-tidak-merata"><strong>1. Distribusi Data yang Tidak Merata</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyederhanaan-masalah-klasifikasi"><strong>2. Penyederhanaan Masalah Klasifikasi</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevansi-dengan-tujuan-nyata"><strong>3. Relevansi dengan Tujuan Nyata</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konsistensi-dengan-penelitian-terdahulu"><strong>4. Konsistensi dengan Penelitian Terdahulu</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-skema-pengelompokan-yang-umum-digunakan"><strong>Contoh Skema Pengelompokan yang Umum Digunakan</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-dataset">Identifikasi Kualitas Dataset</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-data">Preprocessing Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling">Modeling</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decision-tree">Decision Tree</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-2-svm-support-vector-machine">Model 2 SVM Support Vector Machine</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a></li>
-</ul>
-</li>
+<ul class="toc">
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#">Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-understanding">Data Understanding</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#dataset">Dataset</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#tujuan">Tujuan</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#integrasi-data">Integrasi Data</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a>
+        <ul class="visible nav section-nav flex-column">
+          <li class="toc-h3 nav-item toc-entry">
+            <a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a>
+          </li>
+        </ul>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#fitur-label">Penjelasan Fitur dan Label Dataset</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identifikasi-kualitas-dataset">Identifikasi Kualitas Dataset</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a>
+      </li>
+    </ul>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing-data">Preprocessing Data</a>
+  </li>
+
+  <li class="toc-h1 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modeling">Modeling</a>
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#decision-tree">Decision Tree</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#svm-support-vector-machine">SVM (Support Vector Machine)</a>
+      </li>
+      <li class="toc-h2 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#naive-bayes">Naive Bayes</a>
+      </li>
+    </ul>
+  </li>
 </ul>
 
   </nav></div>
