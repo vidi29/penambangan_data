@@ -388,20 +388,16 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pendahuluan">Pendahuluan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-Understanding">Data Understanding</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#rincian-dataset">Rincian Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan">Tujuan</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-data">Integrasi Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#Data-Understanding">Data Understanding</a></li><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Dataset">Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan">Tujuan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrasi-data">Integrasi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">Struktur Dataset</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset-kualitas-wine">Deskripsi Dataset Kualitas Wine</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-data">Struktur Data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabel-fitur">Variabel Fitur</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label-quality"><strong>Label: <code class="docutils literal notranslate"><span class="pre">quality</span></code></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi"><strong>Deskripsi</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset-kualitas-wine">Penjelasan Fitur dan Label Dataset</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-pengelompokan-label-kualitas-wine"><strong>Deskripsi Pengelompokan Label Kualitas Wine</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribusi-data-yang-tidak-merata"><strong>1. Distribusi Data yang Tidak Merata</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyederhanaan-masalah-klasifikasi"><strong>2. Penyederhanaan Masalah Klasifikasi</strong></a></li>
@@ -413,7 +409,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-kualitas-dataset">Identifikasi Kualitas Dataset</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deteksi-missing-value">Deteksi Missing Value</a></li></ul>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-data">Preprocessing Data</a></li>
@@ -455,6 +451,8 @@ Dengan demikian, pendekatan ini dapat memberikan kontribusi positif dalam menduk
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="Data-Understanding">
 <h2>Data Understanding</h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="Dataset"></section>
 <h2>Dataset</h2>
 <p>
     Dataset yang digunakan adalah <strong>Wine Quality Dataset</strong> yang tersedia di UCI Machine Learning Repository.
@@ -467,6 +465,8 @@ Dengan demikian, pendekatan ini dapat memberikan kontribusi positif dalam menduk
     Jumlah fitur: 12 fitur input + 1 label output (quality)<br>
     Dua file utama: <em>winequality-red.csv</em> dan <em>winequality-white.csv</em>
 </p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="Tujuan"></section>
 <h2>Tujuan</h2>
     <ul>
         <li>Memprediksi kualitas anggur berdasarkan fitur-fitur kimia.</li>
