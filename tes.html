@@ -919,6 +919,36 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </div>
 </div>
 
+<h2>Penjelasan Fitur dan Label Dataset</h2>
+
+<p><strong>Fitur</strong> adalah atribut atau variabel independen dalam dataset yang digunakan untuk membuat prediksi.</p>
+
+<p>Terdapat 12 fitur pada dataset ini:</p>
+<ul>
+  <li><strong>fixed_acidity</strong> &rarr; Kandungan asam tetap (contoh: tartaric acid) dalam wine.</li>
+  <li><strong>volatile_acidity</strong> &rarr; Kandungan asam mudah menguap (contoh: acetic acid), tinggi = bau cuka.</li>
+  <li><strong>citric_acid</strong> &rarr; Asam sitrat, menambah kesegaran rasa wine.</li>
+  <li><strong>residual_sugar</strong> &rarr; Gula yang tersisa setelah fermentasi (g/L).</li>
+  <li><strong>chlorides</strong> &rarr; Kandungan garam (terutama sodium chloride).</li>
+  <li><strong>free_sulfur_dioxide</strong> &rarr; SO₂ bebas, mencegah pertumbuhan mikroba.</li>
+  <li><strong>total_sulfur_dioxide</strong> &rarr; Total SO₂, gabungan bebas + terikat.</li>
+  <li><strong>density</strong> &rarr; Kerapatan wine (terkait dengan gula dan alkohol).</li>
+  <li><strong>pH</strong> &rarr; Tingkat keasaman (pH rendah = lebih asam).</li>
+  <li><strong>sulphates</strong> &rarr; Senyawa belerang, membantu stabilisasi dan mencegah oksidasi.</li>
+  <li><strong>alcohol</strong> &rarr; Kandungan alkohol (% vol).</li>
+</ul>
+
+<p><strong>Label</strong> adalah variabel dependen atau target yang ingin diprediksi oleh model machine learning. Label merupakan output yang dipelajari oleh model dari data.</p>
+
+<ul>
+  <li><strong>quality</strong> &rarr; Skor kualitas wine (biasanya dari 3 sampai 9), berdasarkan penilaian sensorik.</li>
+</ul>
+
+<p><strong>Kolom tambahan:</strong></p>
+<ul>
+  <li><strong>color</strong> &rarr; Jenis wine: <em>red</em> atau <em>white</em>.</li>
+</ul>
+
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span> <span class="c1">#untuk mengetahui tipe data dari masing-masing kolom</span>
@@ -1328,12 +1358,12 @@ Naive Bayes   : 0.4277
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Perbandingan%20model%20Klasifikasi%20Naive%20Bayes%20dan%20Decision%20Tree.html"
+       href="dikritisasi.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Perbandingan model Klasifikasi Naive Bayes dan Decision Tree</p>
+        <p class="prev-next-title">Dikritasi</p>
       </div>
     </a>
 </div>
