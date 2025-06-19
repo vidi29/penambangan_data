@@ -977,22 +977,33 @@ dtype: object
 
 <section class="tex2jax_ignore mathjax_ignore" id="identifikasi-kualitas-dataset">
 <h1>Identifikasi Kualitas Dataset<a class="headerlink" href="#identifikasi-kualitas-dataset" title="Link to this heading">#</a></h1>
+
 <section id="deteksi-missing-value">
 <h2>Deteksi Missing Value<a class="headerlink" href="#deteksi-missing-value" title="Link to this heading">#</a></h2>
-<p>Missing value merupakan data yang hilang pada suatu dataset. Hal ini bisa terjadi oleh beberapa faktor, diantaranya adalah :</p>
+
+<p>Missing value atau data yang hilang merupakan salah satu permasalahan umum dalam pengolahan dataset. Data yang hilang dapat terjadi karena berbagai alasan, di antaranya:</p>
 <ul class="simple">
-<li><p>Interviewer recording error terjadi akibat kelalaian petugas pengumpul data (pewawancara), misalnya ada sejumlah pertanyaan yang terlewatkan.</p></li>
-<li><p>Respondent inability error terjadi akibat ketidakmampuan responden dalam memberikan jawaban akurat, misalnya karena tidak memahami pertanyaan, bosan atau kelelahan (respondent fatigue) akhirnya responden mengosongkan sejumlah pertanyaan atau berhenti mengisi kuesioner di tengah jalan.</p></li>
-<li><p>Unwillingness respondent error terjadi karena responden tidak berkenan memberikan jawaban yang akurat, misalnya pertanyaan soal penghasilan, usia, berat badan, pengalaman melakukan pelanggaran hukum, dll.</p></li>
+  <li><p><strong>Human error oleh pewawancara</strong>: Terjadi akibat kelalaian petugas dalam mencatat jawaban responden, misalnya pertanyaan yang terlewat.</p></li>
+  <li><p><strong>Ketidakmampuan responden</strong>: Responden tidak dapat memberikan jawaban yang akurat karena kurang memahami pertanyaan atau mengalami kelelahan (respondent fatigue), sehingga ada bagian yang tidak diisi.</p></li>
+  <li><p><strong>Ketidaksediaan responden</strong>: Responden sengaja tidak menjawab karena pertanyaannya dianggap sensitif, seperti pendapatan, usia, atau pengalaman hukum.</p></li>
 </ul>
-<p>Cara penanganan Missing Values :</p>
+
+<p>Beberapa cara yang umum dilakukan untuk menangani missing value antara lain:</p>
 <ul class="simple">
-<li><p>Mengabaikan dan membuang missing data.</p></li>
-<li><p>Estimasi parameter.</p></li>
-<li><p>Imputasi.</p></li>
+  <li><p>Menghapus data yang mengandung nilai kosong.</p></li>
+  <li><p>Mengestimasi nilai berdasarkan parameter statistik.</p></li>
+  <li><p>Menggunakan teknik imputasi.</p></li>
 </ul>
-<p>Dalam modul kali ini saya akan menangani missing values menggunakan metode imputasi, yang ada 2 metode yaitu menggunakan metode Mean dan menggunakan metode KNN.</p>
-<p>pada kolom di bawah ini akan dilakukan pendeteksian missing values terlebih dahulu pada masing-masing kolom.</p>
+
+<p>Pada pembahasan kali ini, penanganan missing value dilakukan menggunakan metode imputasi. Dua metode imputasi yang digunakan adalah:</p>
+<ul class="simple">
+  <li><p><strong>Imputasi dengan Mean</strong>: Menggantikan nilai kosong dengan rata-rata dari kolom tersebut.</p></li>
+  <li><p><strong>Imputasi dengan KNN</strong>: Menggunakan algoritma K-Nearest Neighbors untuk memperkirakan nilai yang hilang berdasarkan kemiripan data lain.</p></li>
+</ul>
+
+<p>Langkah pertama yang dilakukan adalah mendeteksi keberadaan missing value di setiap kolom dalam dataset.</p>
+</section>
+</section>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deteksi missing value</span>
