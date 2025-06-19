@@ -412,7 +412,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
 
 <H1>Evaluasi Model Klasifikasi untuk Prediksi Kualitas Anggur</H1>
-<h2>Pendahuluan</section>h2>
+<h2>Pendahuluan<h2>
 <p>Kualitas anggur merupakan salah satu faktor penting dalam industri makanan dan minuman, khususnya dalam produksi wine. 
     Penilaian kualitas anggur biasanya dilakukan oleh para ahli dengan menggunakan metode sensorik yang bersifat subjektif dan membutuhkan waktu serta biaya yang tidak sedikit. 
     Oleh karena itu, pendekatan berbasis data dan teknologi machine learning menjadi solusi alternatif yang menjanjikan untuk memprediksi kualitas anggur secara otomatis dan objektif.</p>
@@ -425,13 +425,87 @@ document.write(`
     Dengan demikian, pendekatan ini dapat memberikan kontribusi positif dalam mendukung pengambilan keputusan di bidang produksi dan pengolahan anggur.</p>
 
 <h2>Data Understanding</h2>
-<b>Sumber Data</b>
-<p>
-Dataset diambil dari link berikut: <br>
-<a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" target="_blank">
-    https://archive.ics.uci.edu/ml/datasets/Wine+Quality
-</a>
-</p>
+<h2>Dataset</h2>
+  <p>
+    Dataset yang digunakan adalah <strong>Wine Quality Dataset</strong> yang tersedia di UCI Machine Learning Repository.
+    Dataset ini berisi data hasil uji kimia dari sampel anggur merah dan putih yang telah dinilai kualitasnya oleh para ahli.
+  </p>
+  <p>
+    Link dataset: <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" target="_blank">
+    https://archive.ics.uci.edu/ml/datasets/Wine+Quality</a><br>
+    Jumlah data: 6497 baris data<br>
+    Jumlah fitur: 12 fitur input + 1 label output (quality)<br>
+    Dua file utama: <em>winequality-red.csv</em> dan <em>winequality-white.csv</em>
+  </p>
+
+  <h2>Tujuan</h2>
+  <ul>
+    <li>Memprediksi kualitas anggur berdasarkan fitur-fitur kimia.</li>
+    <li>Membandingkan performa beberapa model klasifikasi.</li>
+    <li>Mengetahui fitur yang paling memengaruhi kualitas anggur.</li>
+    <li>Menilai akurasi dan performa model menggunakan metrik evaluasi.</li>
+  </ul>
+
+  <h2>Integrasi Data</h2>
+  <p>
+    Data dari dua file CSV (anggur merah dan putih) digabungkan menjadi satu. Ditambahkan kolom <code>type</code> 
+    untuk membedakan jenis anggur. Penggabungan dilakukan menggunakan pustaka <code>pandas</code>.
+  </p>
+  <pre><code>
+import pandas as pd
+
+red = pd.read_csv('winequality-red.csv')
+white = pd.read_csv('winequality-white.csv')
+
+red['type'] = 'red'
+white['type'] = 'white'
+
+data = pd.concat([red, white], ignore_index=True)
+  </code></pre>
+
+  <h2>Eksplorasi Data</h2>
+  <p>Eksplorasi dilakukan untuk memahami pola, distribusi, dan hubungan antar fitur. Beberapa hal yang dilakukan:</p>
+  <ul>
+    <li>Melihat statistik deskriptif dengan <code>.describe()</code></li>
+    <li>Distribusi label kualitas anggur</li>
+    <li>Visualisasi heatmap korelasi</li>
+    <li>Boxplot untuk deteksi outlier</li>
+  </ul>
+
+  <h2>Struktur Dataset</h2>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama Kolom</th>
+        <th>Deskripsi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>fixed acidity</td><td>Keasaman tetap (g/dm³)</td></tr>
+      <tr><td>2</td><td>volatile acidity</td><td>Keasaman mudah menguap (g/dm³)</td></tr>
+      <tr><td>3</td><td>citric acid</td><td>Asam sitrat (g/dm³)</td></tr>
+      <tr><td>4</td><td>residual sugar</td><td>Gula sisa (g/dm³)</td></tr>
+      <tr><td>5</td><td>chlorides</td><td>Kadar klorida (g/dm³)</td></tr>
+      <tr><td>6</td><td>free sulfur dioxide</td><td>SO2 bebas (mg/dm³)</td></tr>
+      <tr><td>7</td><td>total sulfur dioxide</td><td>Total SO2 (mg/dm³)</td></tr>
+      <tr><td>8</td><td>density</td><td>Kepadatan (g/cm³)</td></tr>
+      <tr><td>9</td><td>pH</td><td>Tingkat keasaman</td></tr>
+      <tr><td>10</td><td>sulphates</td><td>Sulfat (g/dm³)</td></tr>
+      <tr><td>11</td><td>alcohol</td><td>Persentase alkohol (%)</td></tr>
+      <tr><td>12</td><td>quality</td><td>Nilai kualitas (0–10)</td></tr>
+      <tr><td>13</td><td>type</td><td>Jenis anggur (red/white)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Identifikasi Kualitas Dataset</h2>
+  <ul>
+    <li><strong>Kelengkapan:</strong> Tidak ada missing value.</li>
+    <li><strong>Distribusi tidak seimbang:</strong> Mayoritas anggur memiliki kualitas 5–7.</li>
+    <li><strong>Skala bervariasi:</strong> Perlu normalisasi untuk beberapa fitur.</li>
+    <li><strong>Outlier:</strong> Ditemukan pada beberapa fitur seperti volatile acidity.</li>
+    <li><strong>Korelasi:</strong> Fitur free sulfur dioxide dan total sulfur dioxide memiliki korelasi tinggi.</li>
+  </ul>
 
 
 
