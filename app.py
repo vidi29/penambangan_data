@@ -1,59 +1,50 @@
 import streamlit as st
-import pandas as pd
+import joblib
+import numpy as np
 
-# (gunakan kode sebelumnya untuk menghasilkan df_result)
-from sklearn.datasets import load_iris
-import pandas as pd
-from sklearn.cluster import KMeans
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import GaussianNB
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
+# -----------------------------
+# Load model yang sudah disimpan
+# -----------------------------
+model = joblib.load('svm_blood_model.pkl')  # Pastikan file model ini sudah ada
 
-# Load Iris
-iris = load_iris()
-X = pd.DataFrame(iris.data, columns=iris.feature_names)
-y = iris.target
-X_original = X.copy()
+# -----------------------------
+# Judul Halaman
+# -----------------------------
+st.set_page_config(page_title="Prediksi Donor Darah", layout="centered")
+st.title("🩸 Prediksi Donor Darah Menggunakan SVM")
+st.write("""
+Aplikasi ini memprediksi apakah seseorang akan melakukan donor darah di masa depan berdasarkan riwayat donor sebelumnya.
+""")
 
-X_discrete = X.copy()
-for col in X.columns:
-    kmeans = KMeans(n_clusters=3, random_state=42)
-    X_discrete[col] = kmeans.fit_predict(X[[col]])
+# -----------------------------
+# Form Input Pengguna
+# -----------------------------
+st.header("📋 Form Input Data")
 
-# Split data
-X_train_o, X_test_o, y_train, y_test = train_test_split(X_original, y, test_size=0.3, random_state=1)
-X_train_d, X_test_d, _, _ = train_test_split(X_discrete, y, test_size=0.3, random_state=1)
+recency = st.number_input("Recency (Bulan sejak donor terakhir)", min_value=0, max_value=100, value=2)
+frequency = st.number_input("Frequency (Jumlah total donor)", min_value=0, max_value=50, value=4)
+monetary = st.number_input("Monetary (Total darah dalam cc)", min_value=0, max_value=12500, step=250, value=1000)
+time = st.number_input("Time (Minggu sejak donor pertama)", min_value=0, max_value=100, value=20)
 
-# Model training
-nb_original = GaussianNB().fit(X_train_o, y_train)
-dt_original = DecisionTreeClassifier().fit(X_train_o, y_train)
+# -----------------------------
+# Tombol Prediksi
+# -----------------------------
+if st.button("🔍 Prediksi"):
+    # Membentuk data input
+    input_data = np.array([[recency, frequency, monetary, time]])
 
-nb_discrete = GaussianNB().fit(X_train_d, y_train)
-dt_discrete = DecisionTreeClassifier().fit(X_train_d, y_train)
+    # Melakukan prediksi
+    prediction = model.predict(input_data)
 
-result = {
-    'Model': ['Naive Bayes', 'Naive Bayes', 'Decision Tree', 'Decision Tree'],
-    'Data': ['Original', 'Diskritisasi', 'Original', 'Diskritisasi'],
-    'Akurasi': [
-        accuracy_score(y_test, nb_original.predict(X_test_o)),
-        accuracy_score(y_test, nb_discrete.predict(X_test_d)),
-        accuracy_score(y_test, dt_original.predict(X_test_o)),
-        accuracy_score(y_test, dt_discrete.predict(X_test_d))
-    ]
-}
-df_result = pd.DataFrame(result)
-print(df_result)
+    # Menampilkan hasil prediksi
+    st.subheader("🧾 Hasil Prediksi:")
+    if prediction[0] == 1:
+        st.success("✅ Orang ini kemungkinan akan donor darah lagi.")
+    else:
+        st.warning("❌ Orang ini kemungkinan **tidak** akan donor darah lagi.")
 
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-sns.barplot(data=df_result, x='Model', y='Akurasi', hue='Data')
-plt.title("Perbandingan Akurasi Klasifikasi")
-plt.ylim(0.8, 1.0)
-plt.show()
-
-st.title("Perbandingan Klasifikasi Dataset Iris")
-st.write("Hasil klasifikasi sebelum dan sesudah diskritisasi dengan K-Means.")
-
-st.dataframe(df_result)
+# -----------------------------
+# Footer atau informasi tambahan
+# -----------------------------
+st.markdown("---")
+st.caption("Model ini menggunakan Support Vector Machine (SVM) dan dilatih pada dataset Blood Transfusion Service Center dari UCI Machine Learning Repository.")
