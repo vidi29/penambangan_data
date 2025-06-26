@@ -624,8 +624,6 @@ Downloading ucimlrepo-0.0.7-py3-none-any.whl (8.0 kB)
 </div>
 </div>
 
-//Display Data
-
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -682,89 +680,69 @@ Downloading ucimlrepo-0.0.7-py3-none-any.whl (8.0 kB)
 <h1>Struktur Dataset<a class="headerlink" href="#struktur-dataset" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span> <span class="c1">#untuk mengetahui bentuk dataset(baris &amp; kolom)</span>
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># untuk mengetahui bentuk dataset (baris &amp; kolom)</span>
 </pre></div>
 </div>
 </div>
+</div>
+
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6497, 12)
+<div class="output execute_result highlight-myst-ansi notranslate">
+<div class="highlight"><pre><span></span>(748, 5)
 </pre></div>
 </div>
 </div>
-</div>
-<p>Terdapat 6497 Baris dan 12 Kolom</p>
+
+<p>Terdapat 748 Baris dan 5 Kolom</p>
+
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="c1">#untuk mengetahui kolom-kolom yang ada pada dataset</span>
+<div class="highlight-ipython3 notranslate">
+<div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="c1"># untuk mengetahui kolom-kolom yang ada pada dataset</span>
 </pre></div>
 </div>
 </div>
+</div>
+
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;fixed_acidity&#39;, &#39;volatile_acidity&#39;, &#39;citric_acid&#39;, &#39;residual_sugar&#39;,
-       &#39;chlorides&#39;, &#39;free_sulfur_dioxide&#39;, &#39;total_sulfur_dioxide&#39;, &#39;density&#39;,
-       &#39;pH&#39;, &#39;sulphates&#39;, &#39;alcohol&#39;, &#39;quality&#39;],
-      dtype=&#39;object&#39;)
+<div class="output execute_result highlight-myst-ansi notranslate">
+<div class="highlight"><pre><span></span>Index(['Recency', 'Frequency', 'Monetary', 'Time', 'Donated_Blood'], dtype='object')
 </pre></div>
 </div>
 </div>
-</div>
+
 
 <section class="tex2jax_ignore mathjax_ignore" id="fitur-label">
 <h1>Penjelasan Fitur dan Label Dataset<a class="headerlink" href="#fitur-label" title="Link to this heading">#</a></h1>
 
 <p><strong>Fitur</strong> adalah atribut atau variabel independen dalam dataset yang digunakan untuk membuat prediksi.</p>
 
-<p>Terdapat 12 fitur pada dataset ini:</p>
+<p>Terdapat 4 fitur utama pada dataset ini:</p>
 <ul>
-  <li><strong>fixed_acidity</strong> &rarr; Kandungan asam tetap (contoh: tartaric acid) dalam wine.</li>
-  <li><strong>volatile_acidity</strong> &rarr; Kandungan asam mudah menguap (contoh: acetic acid), tinggi = bau cuka.</li>
-  <li><strong>citric_acid</strong> &rarr; Asam sitrat, menambah kesegaran rasa wine.</li>
-  <li><strong>residual_sugar</strong> &rarr; Gula yang tersisa setelah fermentasi (g/L).</li>
-  <li><strong>chlorides</strong> &rarr; Kandungan garam (terutama sodium chloride).</li>
-  <li><strong>free_sulfur_dioxide</strong> &rarr; SO₂ bebas, mencegah pertumbuhan mikroba.</li>
-  <li><strong>total_sulfur_dioxide</strong> &rarr; Total SO₂, gabungan bebas + terikat.</li>
-  <li><strong>density</strong> &rarr; Kerapatan wine (terkait dengan gula dan alkohol).</li>
-  <li><strong>pH</strong> &rarr; Tingkat keasaman (pH rendah = lebih asam).</li>
-  <li><strong>sulphates</strong> &rarr; Senyawa belerang, membantu stabilisasi dan mencegah oksidasi.</li>
-  <li><strong>alcohol</strong> &rarr; Kandungan alkohol (% vol).</li>
+  <li><strong>Recency</strong> &rarr; Jumlah bulan sejak terakhir kali donor melakukan donasi darah.</li>
+  <li><strong>Frequency</strong> &rarr; Jumlah total donasi darah yang dilakukan selama dua tahun terakhir.</li>
+  <li><strong>Monetary</strong> &rarr; Total darah yang didonorkan oleh individu (dalam satuan cc).</li>
+  <li><strong>Time</strong> &rarr; Waktu dalam bulan sejak donor pertama kali melakukan donasi.</li>
 </ul>
 
-<p><strong>Label</strong> adalah variabel dependen atau target yang ingin diprediksi oleh model machine learning. Label merupakan output yang dipelajari oleh model dari data.</p>
-
+<p><strong>Label</strong> adalah variabel dependen atau target yang ingin diprediksi oleh model machine learning.</p>
 <ul>
-  <li><strong>quality</strong> &rarr; Skor kualitas wine (biasanya dari 3 sampai 9), berdasarkan penilaian sensorik.</li>
+  <li><strong>Donated_Blood</strong> &rarr; Menunjukkan apakah donor melakukan donasi darah pada bulan Maret 2007 (1 = Ya, 0 = Tidak).</li>
 </ul>
+</section>
 
-<p><strong>Kolom tambahan:</strong></p>
-<ul>
-  <li><strong>color</strong> &rarr; Jenis wine: <em>red</em> atau <em>white</em>.</li>
-</ul>
-
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span> <span class="c1">#untuk mengetahui tipe data dari masing-masing kolom</span>
-</pre></div>
-</div>
-</div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fixed_acidity           float64
-volatile_acidity        float64
-citric_acid             float64
-residual_sugar          float64
-chlorides               float64
-free_sulfur_dioxide     float64
-total_sulfur_dioxide    float64
-density                 float64
-pH                      float64
-sulphates               float64
-alcohol                 float64
-quality                   int64
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Recency         int64
+Frequency       int64
+Monetary        int64
+Time            int64
+Donated_Blood   int64
 dtype: object
 </pre></div>
 </div>
 </div>
-</div>
-</section>
+
 
 <section class="tex2jax_ignore mathjax_ignore" id="identifikasi-kualitas-dataset">
 <h1>Identifikasi Kualitas Dataset<a class="headerlink" href="#identifikasi-kualitas-dataset" title="Link to this heading">#</a></h1>
